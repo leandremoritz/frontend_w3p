@@ -277,8 +277,6 @@ a.nav-link:focus {
   display: flex;
   height: 100vh;
   align-items: center;
-  background: #f5d9d6 url("https://i.postimg.cc/9fTzqwtw/flower2.png") no-repeat
-    right bottom;
 }
 .hero-img img {
   display: none;
