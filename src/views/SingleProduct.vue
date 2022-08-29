@@ -54,4 +54,9 @@ img {
   -webkit-backdrop-filter: blur(6.7px);
   border: 1px solid rgba(255, 255, 255, 0.88);
 }
+@media screen and (max-width: 1200px) {
+  .card {
+    width: fit-content;
+  }
+}
 </style>

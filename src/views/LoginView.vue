@@ -81,7 +81,7 @@ export default {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6.7px);
   -webkit-backdrop-filter: blur(6.7px); */
-  border: 1px solid rgba(255, 255, 255, 0.88);
+
   background-color: #f5d9d6;
   width: 80vw;
   margin: 20px;
@@ -213,5 +213,8 @@ p {
   .button-17 {
     width: 50vw;
   }
+}
+.box-overlay {
+  border: none;
 }
 </style>
