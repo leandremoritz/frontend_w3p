@@ -253,4 +253,16 @@ form input:first-child {
   box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
     rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
 }
+@media screen and (max-width: 400px) {
+  .button-17 {
+    width: 50vw;
+  }
+  #output {
+    width: fit-content;
+  }
+  #register {
+    display: flex;
+    justify-content: center;
+  }
+}
 </style>

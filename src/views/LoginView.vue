@@ -88,7 +88,7 @@ export default {
   padding: 10px;
 
   height: fit-content;
-
+  width: fit-content;
   display: block;
   margin: 0 auto;
   border-radius: 30px;
@@ -208,5 +208,10 @@ p {
 .button-17:disabled {
   box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
     rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
+}
+@media screen and (max-width: 400px) {
+  .button-17 {
+    width: 50vw;
+  }
 }
 </style>
