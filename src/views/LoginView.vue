@@ -73,6 +73,8 @@ export default {
 }
 #login {
   padding-top: 150px;
+  overflow-x: hidden;
+  margin: 10px;
 }
 
 #output {

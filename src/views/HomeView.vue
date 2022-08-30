@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div v-if="user">
     <!-- Hero Section -->
     <div class="hero">
-      <div>
+      <div class="rotate">
         <img class="" src="" alt="" />
       </div>
       <div class="hero-text">
@@ -78,9 +78,22 @@
       </div>
     </section>
   </div>
+  <div v-else>
+    <!-- <router-link to="/login">Login</router-link>
+    <router-link to="/register">Register</router-link> -->
+    <div class="no_one">
+      <h1>You are not a user please login or register</h1>
+    </div>
+  </div>
 </template>
 <script>
-export default {};
+export default {
+  computed: {
+    user() {
+      return this.$store.state.user;
+    },
+  },
+};
 </script>
 <style>
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,500,700");
@@ -89,6 +102,14 @@ export default {};
 * {
   box-sizing: border-box;
 }
+
+.no_one {
+  height: 92vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
 body {
   color: #090b08;
   margin: 0;
@@ -431,6 +452,21 @@ input {
 .copy-wrapper a {
   font-weight: 700;
 }
+.rotate {
+  margin-left: 145px;
+  padding-top: 250px;
+  padding-bottom: 200px;
+  -webkit-animation: mover 2s infinite alternate;
+  animation: around 2s infinite alternate;
+}
+@-webkit-keyframes around {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
 /* Responsive Style */
 @media (min-width: 320px) {
@@ -504,7 +540,8 @@ input {
   .navbar {
     display: flex;
     position: relative;
-    height: auto;
+    padding-top: 25px;
+    height: fit-content;
     width: auto;
     background-color: transparent;
     z-index: 1;

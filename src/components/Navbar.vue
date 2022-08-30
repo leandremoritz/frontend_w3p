@@ -20,18 +20,43 @@
       <ul class="menu">
         <!-- <li><a class="nav-link" href="#about">About</a></li>
         <li><a class="nav-link" href="#contact">Contact</a></li> -->
-        <li><router-link to="/home">Home</router-link></li>
-
-        <li><router-link to="/login">Login</router-link></li>
-
-        <li><router-link to="/register">Register</router-link></li>
-        <li><router-link to="/cart">Cart</router-link></li>
+        <div class="nav_user" v-if="user">
+          <li><router-link to="/home">Home</router-link></li>
+          <li><router-link to="/cart">Cart</router-link></li>
+          <li><router-link to="/profile">Profile</router-link></li>
+          <!-- <li><button @click="Logout()">Logout</button></li> -->
+          <div>
+            <img
+              class="profile-pic"
+              width="40"
+              height="35"
+              :src="user.image"
+              :alt="user.name"
+            />
+          </div>
+        </div>
+        <div v-else>
+          <li><router-link to="/login">Login</router-link></li>
+          <li><router-link to="/register">Register</router-link></li>
+        </div>
       </ul>
     </nav>
   </header>
 </template>
 <script>
-export default {};
+export default {
+  computed: {
+    user() {
+      return this.$store.state.user;
+    },
+  },
+  // methods: {
+  //   Logout() {
+  //     this.$store.commit("Logout");
+  //     this.$router.push("/  ");
+  //   },
+  // },
+};
 </script>
 <style>
 li {
@@ -41,5 +66,29 @@ li {
   font-size: 15px;
   background-color: inherit;
   border: none;
+}
+.profile-pic {
+  border-radius: 50%;
+  filter: drop-shadow(0px 2px 15px pink);
+}
+.nav_user {
+  display: flex;
+}
+
+.navbar {
+  height: fit-content;
+}
+@media screen and (max-width: 760px) {
+  .nav_user {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  .profile-pic {
+    margin-top: 50px;
+    width: 100px;
+    height: 100px;
+    filter: drop-shadow(0px 2px 15px pink);
+  }
 }
 </style>

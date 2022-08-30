@@ -1,4 +1,8 @@
 import { createStore } from 'vuex'
+// Allows user state to b e saved to local storage
+import createPersistedState from "vuex-persistedstate";
+import router from "@/router";
+
 
 export default createStore({
   state: { 
@@ -30,6 +34,9 @@ export default createStore({
     },
     setToken(state, token) {
       state.token = token;
+    },
+    Logout(state){ 
+     (state.user = ""), (state.token = "")
     },
 
   },
@@ -170,7 +177,8 @@ export default createStore({
             .then((data) => {
               context.commit("setUser", data.user);
               console.log(data.user)
-                alert(data.user.email);
+              alert(data.user.email);
+              router.push("/home");
                 // router.push({
                 //   name: "users",
                 // });
@@ -202,5 +210,6 @@ export default createStore({
     },
   },
   modules: {
-  }
+    // Allows user state to b e saved to local storage
+  },  plugins: [createPersistedState()],
 })

@@ -15,7 +15,10 @@
                 >
                   <button class="button-17 btn">Single view</button>
                 </router-link>
-                <button class="button-17 btn">Add to cart</button>
+                <button @click="addToCart(product)" class="button-17">
+                  <i class="fa-solid fa-cart-arrow-down"></i>
+                  <span class="btn2 ms-1"> Add to Cart</span>
+                </button>
               </div>
             </h2>
 
@@ -38,6 +41,11 @@ export default {
   computed: {
     products() {
       return this.$store.state.products;
+    },
+  },
+  methods: {
+    addToCart(product) {
+      this.$store.commit("updateCart", product);
     },
   },
 };
@@ -143,5 +151,14 @@ img {
   backdrop-filter: blur(6.7px);
   -webkit-backdrop-filter: blur(6.7px);
   border: 1px solid rgba(255, 255, 255, 0.88);
+}
+@media screen and (max-width: 850px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+  }
 }
 </style>

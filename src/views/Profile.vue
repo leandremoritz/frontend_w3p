@@ -1,57 +1,68 @@
 <template>
-  <div class="test">
-    <div v-for="product in products" :key="product.id" :product="product">
-      <div class="loop">
-        <div class="card">
-          <img :src="product.image" />
-          <div class="content">
-            <h2 class="desc">{{ product.descriptions }}</h2>
-            <h3>R{{ product.price }}</h3>
-            <h3>{{ product.category }}</h3>
-            <h2 class="title">
-              <div class="products_btn">
-                <router-link
-                  :to="{ name: 'SingleProduct', params: { id: product.id } }"
-                >
-                  <button class="button-17 btn">Single view</button>
-                </router-link>
-                <button @click="addToCart(product)" class="button-17">
-                  <i class="fa-solid fa-cart-arrow-down"></i>
-                  <span class="btn2 ms-1"> Add to Cart</span>
-                </button>
-              </div>
-            </h2>
-
-            <p class="copy"></p>
-          </div>
+  <div class="container">
+    <div class="go" v-if="user">
+      <!-- Image and user details -->
+      <div class="display text-center">
+        <div class="users_PP">
+          <img class="profilepicture" alt="profilepicture" :src="user.image" />
         </div>
+        <div class="Users_details">
+          <h1 class="user text-light">{{ user.fullname }}</h1>
+          <h2 class="email text-light">{{ user.email }}</h2>
+        </div>
+        <li><button class="button-17" @click="Logout()">Logout</button></li>
       </div>
     </div>
   </div>
 </template>
-
 <script>
 export default {
-  props: ["id", "product"],
-
-  mounted() {
-    this.$store.dispatch("getBracelets", this.id);
-  },
-
   computed: {
-    products() {
-      return this.$store.state.products;
+    user() {
+      return this.$store.state.user;
     },
   },
   methods: {
-    addToCart(product) {
-      this.$store.commit("updateCart", product);
+    Logout() {
+      this.$store.commit("Logout");
+      this.$router.push("/ ");
     },
   },
 };
 </script>
 
 <style scoped>
+.display {
+  background-color: #f5d9d6;
+  width: 80vw;
+  margin: 20px;
+  padding: 10px;
+  height: fit-content;
+  width: 50vw;
+  display: block;
+  margin: 0 auto;
+  border-radius: 30px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.7px);
+}
+li {
+  list-style-type: none;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f5d9d6;
+  padding-top: 150px;
+  backdrop-filter: blur 5px;
+  /* margin-top: 150px; */
+}
+.profilepicture {
+  filter: drop-shadow(0px 10px 3px white);
+  border-radius: 50%;
+  width: 360px;
+}
 .button-17 {
   margin: 3%;
   align-items: center;
@@ -129,35 +140,8 @@ export default {
   box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
     rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
 }
-img {
-  width: 200px;
-  height: 300px;
-}
-.test {
-  display: flex;
-  padding-top: 150px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-/* cards */
-.card {
-  padding: 30px;
-  margin: 20px;
-  width: 30vw;
-  /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(6.7px);
-  -webkit-backdrop-filter: blur(6.7px);
-  border: 1px solid rgba(255, 255, 255, 0.88);
-}
-@media screen and (max-width: 850px) {
-  .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+@media screen and (max-width: 800px) {
+  .display {
     width: fit-content;
   }
 }

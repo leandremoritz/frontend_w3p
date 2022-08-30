@@ -96,12 +96,12 @@ img {
 }
 
 div.card {
-  margin: auto;
+  margin: 30px;
 }
 
 .card {
   padding: 30px;
-  margin: 20px;
+
   width: 20vw;
   padding: 10px;
   /* From https://css.glass */
