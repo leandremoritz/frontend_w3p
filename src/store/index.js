@@ -36,7 +36,7 @@ export default createStore({
       state.token = token;
     },
     Logout(state){ 
-     (state.user = ""), (state.token = "")
+     (state.user = ""), (state.token = "") 
     },
 
   },
@@ -61,7 +61,7 @@ export default createStore({
     },
     deleteFromCart: async (context, id) => {
       const newCart = context.state.cart.filter(
-        (product) => product.product_id != id
+        (product) => product.id != id
       );
       context.commit("removeFromCart", newCart);
     },

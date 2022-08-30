@@ -1,6 +1,17 @@
 <template>
+  <input
+    class="button-17"
+    type="text"
+    v-model="search"
+    placeholder="Search..."
+  />
+
   <div class="test">
-    <div v-for="product in products" :key="product.id" :product="product">
+    <div
+      v-for="product in filteredProducts"
+      :key="product.id"
+      :product="product"
+    >
       <div class="loop">
         <div class="card">
           <img :src="product.image" />
@@ -33,7 +44,11 @@
 <script>
 export default {
   props: ["id", "product"],
-
+  data() {
+    return {
+      search: "",
+    };
+  },
   mounted() {
     this.$store.dispatch("getProducts", this.id);
   },
@@ -41,6 +56,21 @@ export default {
   computed: {
     products() {
       return this.$store.state.products;
+    },
+
+    filteredProducts() {
+      return this.$store.state.products?.filter((product) => {
+        let isMatch = true;
+        if (
+          !product.descriptions
+            .toLowerCase()
+            .includes(this.search.toLowerCase())
+        )
+          isMatch = false;
+        // if (this.category !== "all" && product.category !== this.category) isMatch = false;
+        // if (this.company !== "all" && product.company !== this.company) isMatch = false;
+        return isMatch;
+      });
     },
   },
   methods: {
@@ -91,7 +121,7 @@ export default {
 
 .button-17:hover {
   background: #f6f9fe;
-  color: #174ea6;
+  color: pink;
 }
 
 .button-17:active {
@@ -102,7 +132,7 @@ export default {
 
 .button-17:focus {
   outline: none;
-  border: 2px solid #4285f4;
+  border: 2px solid pink;
 }
 
 .button-17:not(:disabled) {
@@ -128,6 +158,15 @@ export default {
 .button-17:disabled {
   box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
     rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
+}
+input {
+  /* width: 200px; */
+  height: 30px;
+  position: fixed;
+  top: 16%;
+  left: -1vw;
+  width: 40vw;
+  /* background: rgba(253, 167, 249, 0.848); */
 }
 img {
   width: 200px;
