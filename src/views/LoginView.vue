@@ -15,7 +15,7 @@
         />
         <label for="password">Password</label>
         <input
-          type="text"
+          type="password"
           v-model="password"
           class="button-17"
           placeholder="Enter your password..."
