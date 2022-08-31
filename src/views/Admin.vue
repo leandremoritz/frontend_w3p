@@ -1,71 +1,85 @@
 <template>
-  <div class="container">
-    <div class="go" v-if="user">
-      <!-- Image and user details -->
-      <div class="display text-center">
-        <div class="users_PP">
-          <img class="profilepicture" alt="profilepicture" :src="user.image" />
-        </div>
-        <div class="Users_details">
-          <h1 class="user text-light">{{ user.fullname }}</h1>
-          <h2 class="email text-light">{{ user.email }}</h2>
-        </div>
-        <li><button class="button-17" @click="Logout()">Logout</button></li>
-      </div>
-    </div>
+  <div class="admin">
+    <td><CreateModal :product="product" /></td>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Category</th>
+          <th scope="col">Description</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="product of products" :key="product.id">
+          <td scope="row"><img v-bind:src="product.image" alt="" /></td>
+          <td>{{ product.category }}</td>
+          <td>{{ product.descriptions }}</td>
+          <td>{{ product.price }}</td>
+          <td>
+            <button class="button-17" @click="deleteProduct(product.id)">
+              <i class="fa-solid fa-trash"></i
+              ><span class="ms-2">Delete</span></button
+            ><UpdateModal :product="product" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 <script>
+import UpdateModal from "../components/UpdateModal.vue";
+import CreateModal from "../components/CreateModal.vue";
 export default {
+  components: {
+    UpdateModal,
+    CreateModal,
+  },
+  mounted() {
+    this.$store.dispatch("getProducts");
+  },
   computed: {
-    user() {
-      return this.$store.state.user;
+    products() {
+      return this.$store.state.products;
     },
   },
   methods: {
-    Logout() {
-      this.$store.commit("Logout");
-      this.$router.push("/ ");
+    deleteProduct(id) {
+      return this.$store.dispatch("deleteProduct", id);
+    },
+    createProduct() {
+      this.$store.dispatch("createProduct", {
+        id: this.id,
+        image: this.image,
+        descriptions: this.descriptions,
+        category: this.category,
+        color: this.color,
+        price: this.price,
+      });
     },
   },
 };
 </script>
 
-<style scoped>
-.display {
-  background-color: #f5d9d6;
-  width: 80vw;
+<style>
+.admin {
+  margin-top: 150px !important;
   margin: 20px;
   padding: 10px;
-  height: fit-content;
-  width: 50vw;
-  display: block;
-  margin: 0 auto;
-  border-radius: 30px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(6.7px);
+  color: black;
 }
-li {
-  list-style-type: none;
+table {
+  width: 100%;
+  padding: 15px;
 }
-.container {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #f5d9d6;
-  padding-top: 150px;
-  backdrop-filter: blur 5px;
-  /* margin-top: 150px; */
+td {
+  border: solid 1px pink;
 }
-.profilepicture {
-  filter: drop-shadow(0px 10px 5px black);
-  border-radius: 50%;
-  border: 3px solid;
-  aspect-ratio: 1;
-  height: 200px;
-  width: 200px;
+img {
+  width: 150px;
+  height: 150px;
 }
+/* button */
 .button-17 {
   margin: 3%;
   align-items: center;
@@ -105,7 +119,7 @@ li {
 
 .button-17:hover {
   background: #f6f9fe;
-  color: #174ea6;
+  color: rgb(247, 39, 163);
 }
 
 .button-17:active {
@@ -116,7 +130,7 @@ li {
 
 .button-17:focus {
   outline: none;
-  border: 2px solid #4285f4;
+  border: 2px solid rgb(240, 171, 183);
 }
 
 .button-17:not(:disabled) {
@@ -144,7 +158,23 @@ li {
     rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
 }
 @media screen and (max-width: 800px) {
-  .display {
+  img {
+    width: 100px;
+  }
+  .admin {
+    padding: 0;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 300px) {
+  .admin {
+    display: flex;
+    flex-direction: column;
+  }
+  .table {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     width: fit-content;
   }
 }

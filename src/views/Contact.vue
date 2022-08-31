@@ -1,70 +1,77 @@
 <template>
-  <div class="container">
-    <div class="go" v-if="user">
-      <!-- Image and user details -->
-      <div class="display text-center">
-        <div class="users_PP">
-          <img class="profilepicture" alt="profilepicture" :src="user.image" />
-        </div>
-        <div class="Users_details">
-          <h1 class="user text-light">{{ user.fullname }}</h1>
-          <h2 class="email text-light">{{ user.email }}</h2>
-        </div>
-        <li><button class="button-17" @click="Logout()">Logout</button></li>
-      </div>
-    </div>
+  <div id="output" class="mt-5 mb-5">
+    <h1>Contact Us</h1>
+    <form>
+      <input class="button-17" type="text" placeholder="Fullname" required />
+
+      <input type="text" class="button-17" placeholder="Subject" required />
+      <input
+        id="bigger"
+        type="text"
+        class="button-17"
+        placeholder="Message"
+        required
+      />
+      <button class="button-17" type="submit" id="btn">Submit</button>
+    </form>
   </div>
 </template>
+
 <script>
-export default {
-  computed: {
-    user() {
-      return this.$store.state.user;
-    },
-  },
-  methods: {
-    Logout() {
-      this.$store.commit("Logout");
-      this.$router.push("/ ");
-    },
-  },
-};
+export default {};
 </script>
 
-<style scoped>
-.display {
+<style>
+#output {
   background-color: #f5d9d6;
   width: 80vw;
   margin: 20px;
   padding: 10px;
+  margin-top: 200px !important;
   height: fit-content;
-  width: 50vw;
+  width: fit-content;
   display: block;
   margin: 0 auto;
   border-radius: 30px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(6.7px);
 }
-li {
-  list-style-type: none;
-}
-.container {
-  height: 100vh;
+form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #f5d9d6;
-  padding-top: 150px;
-  backdrop-filter: blur 5px;
-  /* margin-top: 150px; */
+  align-items: center;
+  margin: 10px;
+  padding: 5px;
+  /* text-align: center; */
 }
-.profilepicture {
-  filter: drop-shadow(0px 10px 5px black);
-  border-radius: 50%;
-  border: 3px solid;
-  aspect-ratio: 1;
-  height: 200px;
-  width: 200px;
+form input {
+  width: 90%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+form label {
+  color: white;
+  font-size: 20px;
+}
+button#btn {
+  margin-top: 10px;
+  width: 100px;
+  border-radius: 10px;
+  font-weight: bolder;
+  color: black;
+}
+button#btn:hover {
+  background-color: white;
+  color: black;
+}
+h1 {
+  text-align: center;
+}
+.register {
+  text-decoration: none;
+}
+p {
+  color: white;
 }
 .button-17 {
   margin: 3%;
@@ -87,7 +94,7 @@ li {
   justify-content: center;
   letter-spacing: 0.25px;
   line-height: normal;
-  max-width: 100%;
+  width: 400px;
   overflow: visible;
   padding: 2px 24px;
   position: relative;
@@ -98,14 +105,14 @@ li {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  width: auto;
+
   will-change: transform, opacity;
   z-index: 0;
 }
 
 .button-17:hover {
   background: #f6f9fe;
-  color: #174ea6;
+  color: black !important;
 }
 
 .button-17:active {
@@ -116,7 +123,7 @@ li {
 
 .button-17:focus {
   outline: none;
-  border: 2px solid #4285f4;
+  border: 2px solid black;
 }
 
 .button-17:not(:disabled) {
@@ -143,9 +150,12 @@ li {
   box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
     rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
 }
-@media screen and (max-width: 800px) {
-  .display {
-    width: fit-content;
+@media screen and (max-width: 400px) {
+  .button-17 {
+    width: 50vw;
   }
+}
+.box-overlay {
+  border: none;
 }
 </style>

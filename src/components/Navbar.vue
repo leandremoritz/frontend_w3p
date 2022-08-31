@@ -22,7 +22,9 @@
         <li><a class="nav-link" href="#contact">Contact</a></li> -->
         <div class="nav_user" v-if="user">
           <li><router-link to="/home">Home</router-link></li>
+          <li><router-link to="/contact">Contact</router-link></li>
           <li><router-link to="/cart">Cart</router-link></li>
+          <li><router-link to="/admin">Admin</router-link></li>
           <li><router-link to="/profile">Profile</router-link></li>
           <!-- <li><button @click="Logout()">Logout</button></li> -->
           <div>
@@ -62,6 +64,13 @@ export default {
 li {
   padding-right: 20px;
 }
+a {
+  font-size: 25px;
+  font-weight: bold;
+}
+.nav-bar {
+  padding-top: 100px !important;
+}
 #pages {
   font-size: 15px;
   background-color: inherit;
@@ -69,7 +78,9 @@ li {
 }
 .profile-pic {
   border-radius: 50%;
-  filter: drop-shadow(0px 2px 15px pink);
+  filter: drop-shadow(0px 5px 9px rgb(249, 90, 212));
+  width: 100px;
+  height: 100px;
 }
 .nav_user {
   display: flex;
