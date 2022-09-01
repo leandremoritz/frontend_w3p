@@ -41,6 +41,9 @@ img {
   display: flex;
   justify-content: center;
 }
+.title {
+  padding-left: 50px !important;
+}
 /* cards */
 .card {
   padding: 30px;

@@ -1,7 +1,7 @@
 <template>
   <div class="admin">
     <td class="create"><CreateModal :product="product" /></td>
-    <table>
+    <!-- <table>
       <thead>
         <tr>
           <th scope="col"></th>
@@ -9,23 +9,27 @@
           <th scope="col">Description</th>
           <th scope="col">Price</th>
         </tr>
-      </thead>
-      <tbody>
+      </thead> -->
+    <div id="wrap">
+      <tbody class="b-wrap">
         <tr v-for="product of products" :key="product.id">
-          <td scope="row"><img v-bind:src="product.image" alt="" /></td>
-          <td>{{ product.category }}</td>
-          <td>{{ product.descriptions }}</td>
-          <td>{{ product.price }}</td>
-          <td>
+          <div class="card">
+            <div scope="row"><img v-bind:src="product.image" alt="" /></div>
+            <h2>{{ product.category }}</h2>
+            <h1>{{ product.descriptions }}</h1>
+            <h3>{{ product.price }}</h3>
+
             <button class="button-17" @click="deleteProduct(product.id)">
               <i class="fa-solid fa-trash"></i
               ><span class="ms-2">Delete</span></button
             ><UpdateModal :product="product" />
-          </td>
+          </div>
         </tr>
       </tbody>
-    </table>
+    </div>
   </div>
+
+  <!-- </table> -->
 </template>
 <script>
 import UpdateModal from "../components/UpdateModal.vue";
@@ -62,6 +66,28 @@ export default {
 </script>
 
 <style>
+/* cards */
+.card {
+  padding: 30px;
+  margin: 20px;
+  width: 25vw;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.7px);
+  -webkit-backdrop-filter: blur(6.7px);
+  border: 1px solid rgba(255, 255, 255, 0.88);
+}
+@media screen and (max-width: 850px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+  }
+}
 .create {
   display: flex;
   justify-content: center;
@@ -77,9 +103,13 @@ table {
   width: 100%;
   padding: 15px;
 }
-td {
-  border: solid 3px pink;
+
+.b-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+
 img {
   width: 150px;
   height: 150px;

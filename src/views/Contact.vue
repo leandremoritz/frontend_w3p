@@ -2,7 +2,13 @@
   <div id="output" class="mt-5 mb-5">
     <h1>Contact Us</h1>
     <form>
-      <input class="button-17" type="text" placeholder="Fullname" required />
+      <input
+        id="btn2"
+        class="button-17"
+        type="text"
+        placeholder="Fullname"
+        required
+      />
 
       <input type="text" class="button-17" placeholder="Subject" required />
       <input
@@ -21,7 +27,12 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
+#btn2 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  height: 10vw !important;
+}
 #output {
   background-color: #f5d9d6;
   width: 80vw;

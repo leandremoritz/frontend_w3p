@@ -82,6 +82,9 @@ export default {
 </script>
 
 <style scoped>
+.title {
+  padding-left: 70px !important;
+}
 .button-17 {
   margin: 3%;
   align-items: center;

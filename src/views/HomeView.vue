@@ -2,11 +2,9 @@
   <div v-if="user">
     <!-- Hero Section -->
     <div class="hero">
-      <div class="rotate">
-        <img class="" src="" alt="" />
-      </div>
+      <div class="rotate"></div>
       <div class="hero-text">
-        <h1>L's Jewels</h1>
+        <h1 class="name">L's Jewels</h1>
         <br />
         <h2>
           Precision in every inch of our work where Elegance is our motto.
@@ -128,6 +126,9 @@ h1 {
   font-weight: 700;
   line-height: 1.5em;
   text-transform: uppercase;
+}
+.topic {
+  font-size: 80px !important;
 }
 h2 {
   text-transform: uppercase;

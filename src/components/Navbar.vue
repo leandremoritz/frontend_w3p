@@ -25,7 +25,10 @@
           <li><router-link to="/contact">Contact</router-link></li>
           <li><router-link to="/cart">Cart</router-link></li>
           <li><router-link to="/profile">Profile</router-link></li>
-          <li><router-link to="/admin">Admin</router-link></li>
+
+          <li v-if="user.id === 145">
+            <router-link to="/admin">Admin</router-link>
+          </li>
 
           <!-- <li><button @click="Logout()">Logout</button></li> -->
           <div>

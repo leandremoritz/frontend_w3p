@@ -1,4 +1,5 @@
 <template>
+  <h1>BRACELETS</h1>
   <div class="test">
     <div v-for="product in products" :key="product.id" :product="product">
       <div class="loop">
@@ -9,17 +10,15 @@
             <h3>R{{ product.price }}</h3>
             <h3>{{ product.category }}</h3>
             <h2 class="title">
-              <div class="products_btn">
-                <router-link
-                  :to="{ name: 'SingleProduct', params: { id: product.id } }"
-                >
-                  <button class="button-17 btn">Single view</button>
-                </router-link>
-                <button @click="addToCart(product)" class="button-17">
-                  <i class="fa-solid fa-cart-arrow-down"></i>
-                  <span class="btn2 ms-1"> Add to Cart</span>
-                </button>
-              </div>
+              <router-link
+                :to="{ name: 'SingleProduct', params: { id: product.id } }"
+              >
+                <button class="button-17 btn">Single view</button>
+              </router-link>
+              <button @click="addToCart(product)" class="button-17">
+                <i class="fa-solid fa-cart-arrow-down"></i>
+                <span class="btn2 ms-1"> Add to Cart</span>
+              </button>
             </h2>
 
             <p class="copy"></p>
@@ -135,9 +134,15 @@ img {
 }
 .test {
   display: flex;
-  padding-top: 150px;
+  /* padding-top: 150px; */
   flex-wrap: wrap;
   justify-content: center;
+}
+.title {
+  padding-left: 50px !important;
+}
+h1 {
+  margin-top: 160px;
 }
 /* cards */
 .card {
