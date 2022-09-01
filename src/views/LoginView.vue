@@ -226,6 +226,19 @@ p {
   .button-17 {
     width: 50vw;
   }
+  body {
+    overflow-x: hidden;
+  }
+}
+@media screen and (max-width: 550px) {
+  #output form {
+    width: fit-content;
+    margin: 0;
+    overflow-x: hidden;
+  }
+  .button-17 {
+    width: 50vw;
+  }
 }
 .box-overlay {
   border: none;
