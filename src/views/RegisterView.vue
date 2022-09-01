@@ -129,9 +129,9 @@ export default {
 
   margin: 20px;
   padding: 10px;
-
+  margin-top: 150px !important;
   height: fit-content;
-
+  width: fit-content;
   display: block;
   margin: 0 auto;
   border-radius: 30px;
@@ -263,6 +263,7 @@ form input:first-child {
   #register {
     display: flex;
     justify-content: center;
+    margin-top: 150px;
   }
 }
 </style>

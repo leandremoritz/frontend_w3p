@@ -84,6 +84,7 @@ export default {
 body {
   overflow-x: hidden;
   background-color: #f5d9d6;
+  height: 100vh;
 }
 
 .box {

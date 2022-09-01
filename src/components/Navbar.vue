@@ -24,8 +24,9 @@
           <li><router-link to="/home">Home</router-link></li>
           <li><router-link to="/contact">Contact</router-link></li>
           <li><router-link to="/cart">Cart</router-link></li>
-          <li><router-link to="/admin">Admin</router-link></li>
           <li><router-link to="/profile">Profile</router-link></li>
+          <li><router-link to="/admin">Admin</router-link></li>
+
           <!-- <li><button @click="Logout()">Logout</button></li> -->
           <div>
             <img
@@ -37,6 +38,7 @@
             />
           </div>
         </div>
+
         <div v-else>
           <li><router-link to="/login">Login</router-link></li>
           <li><router-link to="/register">Register</router-link></li>

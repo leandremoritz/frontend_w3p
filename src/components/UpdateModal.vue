@@ -12,6 +12,9 @@
       <input class="button-17" type="text" v-model="product.descriptions" />
       <div>PRICE</div>
       <input class="button-17" type="text" v-model="product.price" />
+      <button class="button-17" @click="toggleModal">
+        <i class="fa-solid fa-pen ms-2"></i><span class="ms-2">Edit</span>
+      </button>
     </form>
   </div>
 </template>
@@ -34,13 +37,18 @@ export default {
 };
 </script>
 <style scoped>
-.mod {
-  padding: 30px;
-  margin: 20px;
-  width: fit-content;
+.mod form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  flex-wrap: wrap;
+  padding: 30px;
+  margin: 20px;
+  width: 50vw;
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.06);
   border-radius: 16px;

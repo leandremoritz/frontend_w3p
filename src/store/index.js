@@ -187,6 +187,7 @@ export default createStore({
          
         });
     },
+    
     Register: async (context, payload) => {
       fetch(`https://fullstack-3wp.herokuapp.com/users/add`, {
         method: "POST",
@@ -208,6 +209,7 @@ export default createStore({
           console.log(data);
         });
     },
+
     // Admin page
     updateProduct: async (context, product) => {
       fetch(`https://fullstack-3wp.herokuapp.com/products/` + id, {

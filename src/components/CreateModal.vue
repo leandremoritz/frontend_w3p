@@ -11,10 +11,8 @@
       <input class="button-17" type="text" />
       <div>PRICE</div>
       <input class="button-17" type="text" />
+      <button class="button-17" @click="createProduct()">Add</button>
     </form>
-    <button class="btn btn-lg rounded-pill ms-2" @click="createProduct()">
-      Add
-    </button>
   </div>
 </template>
 <script>
@@ -58,10 +56,18 @@ button.btn:hover {
   background-color: black;
   color: pink;
 }
-.addme {
+.addme form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   padding: 30px;
   margin: 20px;
-  width: 30vw;
+  width: 50vw;
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.06);
   border-radius: 16px;

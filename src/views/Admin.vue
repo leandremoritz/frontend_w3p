@@ -1,6 +1,6 @@
 <template>
   <div class="admin">
-    <td><CreateModal :product="product" /></td>
+    <td class="create"><CreateModal :product="product" /></td>
     <table>
       <thead>
         <tr>
@@ -62,6 +62,11 @@ export default {
 </script>
 
 <style>
+.create {
+  display: flex;
+  justify-content: center;
+  border: none;
+}
 .admin {
   margin-top: 150px !important;
   margin: 20px;
@@ -73,7 +78,7 @@ table {
   padding: 15px;
 }
 td {
-  border: solid 1px pink;
+  border: solid 3px pink;
 }
 img {
   width: 150px;

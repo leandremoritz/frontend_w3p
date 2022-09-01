@@ -15,7 +15,7 @@
         />
         <label for="password">Password</label>
         <input
-          type="password"
+          type="text"
           v-model="password"
           class="button-17"
           placeholder="Enter your password..."
@@ -72,9 +72,20 @@ export default {
   scroll-behavior: smooth;
 }
 #login {
-  padding-top: 150px;
+  padding-top: 250px;
   overflow-x: hidden;
   margin: 10px;
+}
+button#btn {
+  margin-top: 10px;
+  width: 100px;
+  border-radius: 10px;
+  background-color: black;
+  color: white !important;
+}
+button#btn:hover {
+  background-color: black;
+  color: black !important;
 }
 
 #output {
