@@ -580,7 +580,7 @@ input {
     flex-wrap: wrap;
   }
   .first {
-    padding-top: 130px;
+    padding-top: 150px;
     height: 60vh;
     margin-left: 80px;
   }

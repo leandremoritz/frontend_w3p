@@ -161,9 +161,12 @@ p {
   box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
     rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 470px) {
   .button-17 {
     width: 50vw;
+  }
+  body {
+    margin: 20px;
   }
 }
 .box-overlay {
