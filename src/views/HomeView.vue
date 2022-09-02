@@ -2,7 +2,12 @@
   <div v-if="user">
     <!-- Hero Section -->
     <div class="hero">
-      <div class="rotate"></div>
+      <img
+        class="first"
+        src="https://i.postimg.cc/jS50Dz27/download-15-removebg-preview.png"
+        alt=""
+      />
+      <!-- <div class="rotate"></div> -->
       <div class="hero-text">
         <h1 class="name">L's Jewels</h1>
         <br />
@@ -102,6 +107,10 @@ export default {
 * {
   box-sizing: border-box;
 }
+.name {
+  font-size: 100px;
+  margin: 0 !important;
+}
 
 .no_one {
   height: 92vh;
@@ -120,13 +129,18 @@ body {
 img {
   filter: drop-shadow(0px 10px 3px black);
 }
+.first {
+  padding-top: 200px;
+  filter: drop-shadow(30px 30px 5px pink);
+  /* margin-left: 300px; */
+}
 
-h1 {
+/* h1 {
   font-size: 1.7em;
   font-weight: 700;
   line-height: 1.5em;
   text-transform: uppercase;
-}
+} */
 .topic {
   font-size: 80px !important;
 }
@@ -558,13 +572,21 @@ input {
 }
 
 /* Responsive Style */
-@media (min-width: 320px) {
+@media screen and (max-width: 840px) {
+  .name {
+    font-size: 50px;
+  }
+  .hero {
+    flex-wrap: wrap;
+  }
+  .first {
+    padding-top: 130px;
+    height: 60vh;
+    margin-left: 80px;
+  }
 }
 @media (min-width: 576px) {
   /*  Global  */
-  h1 {
-    font-size: 2em;
-  }
 
   /*  Hero Section  */
   .hero {

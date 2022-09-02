@@ -56,6 +56,8 @@ export default createStore({
     },
     addToCart: async (context, id) => {
       console.log(id);
+    
+     
       // this.state.cart.product.push(id);
       // context.dispatch("updateCart", this.state.cart);
     },
@@ -63,13 +65,28 @@ export default createStore({
       const newCart = context.state.cart.filter(
         (product) => product.id != id
       );
+      swal({
+        title: "Are you sure you want to remove this item?",
+        text: "",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          swal("Poof! Removed !", {
+            icon: "success",
+          });
+        } 
+      })
       context.commit("removeFromCart", newCart);
     },
      // get get all products
      getProducts: async (context , id ) => {
       fetch(`https://fullstack-3wp.herokuapp.com/products`)
+     
         .then((res) => res.json())
-        .then((data) => context.commit("setProducts", data));
+       .then((data) => context.commit("setProducts", data));
     },
     // get singleproduct
     getProduct: async (context , id ) => {
@@ -81,6 +98,7 @@ export default createStore({
     getNecklaces: async (context) => {
       fetch(`https://fullstack-3wp.herokuapp.com/products/products/necklace`)
         .then((res) => res.json())
+        
         .then((data) => {
           if (data.length === 0) {
             console.log(data);
@@ -160,6 +178,7 @@ export default createStore({
         }),
       })
         .then((response) => response.json())
+   
         .then((data) => {
           if (data.token) {
             // Saveing token to the store
@@ -174,10 +193,17 @@ export default createStore({
               },
             })
             .then((res) => res.json())
+          
             .then((data) => {
               context.commit("setUser", data.user);
               console.log(data.user)
-              alert(data.user.email);
+              swal({
+                title: "You've succesfully logged in !",
+                text: "",
+                icon: "success",
+                button: "Aww yiss!",
+              })
+              // alert("You've succesfully logged in !");
               router.push("/home");
                 // router.push({
                 //   name: "users",
@@ -187,7 +213,7 @@ export default createStore({
          
         });
     },
-    
+
     Register: async (context, payload) => {
       fetch(`https://fullstack-3wp.herokuapp.com/users/add`, {
         method: "POST",

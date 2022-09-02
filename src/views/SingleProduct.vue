@@ -2,11 +2,23 @@
   <div class="single">
     <div class="page" v-for="product in product" :key="product.id">
       <div class="card">
-        <img :src="product.image" alt="" />
         <div>
-          <h2>{{ product.descriptions }}</h2>
-          <h1>R{{ product.price }}</h1>
+          <router-link to="/products">
+            <img
+              class="arrow"
+              src="https://i.postimg.cc/pVYs9HkF/icons8-back-arrow-50.pngg"
+              alt=""
+            />
+          </router-link>
         </div>
+        <img :src="product.image" alt="" />
+        <h2>{{ product.descriptions }}</h2>
+        <h1>R{{ product.price }}</h1>
+
+        <button @click="addToCart(product)" class="button-17">
+          <i class="fa-solid fa-cart-arrow-down"></i>
+          <span class="btn2 ms-1" id="add-to-cart"> Add to Cart</span>
+        </button>
       </div>
     </div>
   </div>
@@ -30,10 +42,17 @@ export default {
 <style scoped>
 .single {
   background-color: #f5d9d6;
+  height: 100vh;
+}
+.arrow {
+  width: 50px;
+  filter: drop-shadow(20px 20px 1px pink);
+  margin-bottom: 10px;
 }
 img {
-  width: 300px;
-  margin-top: 30px;
+  width: 150px;
+  margin-top: 20px;
+  filter: drop-shadow(0px 10px 10px white);
 }
 .page {
   height: 100vh;
@@ -48,7 +67,7 @@ img {
 .card {
   padding: 30px;
   margin: 20px;
-  width: 30vw;
+  width: fit-content;
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.06);
   border-radius: 16px;
@@ -57,9 +76,12 @@ img {
   -webkit-backdrop-filter: blur(6.7px);
   border: 1px solid rgba(255, 255, 255, 0.88);
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 570px) {
   .card {
-    width: fit-content;
+    width: fit-content !important;
+  }
+  h2 {
+    font-size: 15px;
   }
 }
 </style>

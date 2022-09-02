@@ -28,7 +28,7 @@
                 </router-link>
                 <button @click="addToCart(product)" class="button-17">
                   <i class="fa-solid fa-cart-arrow-down"></i>
-                  <span class="btn2 ms-1"> Add to Cart</span>
+                  <span class="btn2 ms-1" id="add-to-cart"> Add to Cart</span>
                 </button>
               </div>
             </h2>
@@ -86,6 +86,7 @@ export default {
   padding-left: 70px !important;
 }
 .button-17 {
+  margin-top: 50px !important;
   margin: 3%;
   align-items: center;
   appearance: none;
