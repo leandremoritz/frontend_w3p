@@ -20,9 +20,9 @@
             <h3>{{ product.price }}</h3>
 
             <button class="button-17" @click="deleteProduct(product.id)">
-              <i class="fa-solid fa-trash"></i
-              ><span class="ms-2">Delete</span></button
-            ><UpdateModal :product="product" />
+              <i class="fa-solid fa-trash"></i><span class="ms-2">Delete</span>
+            </button>
+            <UpdateModal :product="product" />
           </div>
         </tr>
       </tbody>
@@ -53,7 +53,6 @@ export default {
     },
     createProduct() {
       this.$store.dispatch("createProduct", {
-        id: this.id,
         image: this.image,
         descriptions: this.descriptions,
         category: this.category,

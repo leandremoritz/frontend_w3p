@@ -10,15 +10,26 @@
           <h1 class="user text-light">{{ user.fullname }}</h1>
           <h2 class="email text-light">{{ user.email }}</h2>
         </div>
+
+        <UpdateUser :user="user" />
+        <button class="button-17" @click="deleteUser(user.id)">
+          <i class="fa-solid fa-trash"></i
+          ><span class="ms-2">Delete Account</span>
+        </button>
         <li><button class="button-17" @click="Logout()">Logout</button></li>
       </div>
     </div>
   </div>
 </template>
 <script>
+import UpdateUser from "../components/UpdateUser.vue";
 export default {
+  components: {
+    UpdateUser,
+  },
   computed: {
     user() {
+      console.log(this.$store.state.user);
       return this.$store.state.user;
     },
   },
@@ -26,6 +37,9 @@ export default {
     Logout() {
       this.$store.commit("Logout");
       this.$router.push("/ ");
+    },
+    deleteUser(id) {
+      return this.$store.dispatch("deleteUser", id);
     },
   },
 };

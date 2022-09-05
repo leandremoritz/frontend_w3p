@@ -249,6 +249,37 @@ export default createStore({
         .then(() => context.dispatch("getProducts"));
     },
 
+    // updateUser
+    updateUser: async (context, payload) => {
+      console.log(payload)
+      // const {
+      //   fullname,
+      //   dob,
+      //   age,
+      //   gender,
+      //   image,
+      //   email,
+      // } = payload;
+      fetch(`https://fullstack-3wp.herokuapp.com/users/` + payload, {
+        method: "PUT",
+        // mode: 'cors',
+        body: JSON.stringify(
+          {
+            fullname:payload.fullname,
+            dob:payload.dob,
+            age:payload.age,
+            gender:payload.gender,
+            image:payload.image,
+            email: payload.email,
+           }
+        ),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then(() => context.dispatch("setUser"));
+    },
     // delete
     deleteProduct: async (context, id) => {
       fetch(`https://fullstack-3wp.herokuapp.com/products/` + id, {
@@ -257,19 +288,24 @@ export default createStore({
         .then((response) => response.json())
         .then(() => context.dispatch("setProducts"));
     },
+     // delete user
+     deleteUser: async (context, id) => {
+      fetch(`https://fullstack-3wp.herokuapp.com/users/` + id, {
+        method: "DELETE",
+      })
+        .then((response) => response.json())
+        .then(() => context.dispatch("setProducts"));
+    },
     // create a product
     createProduct: async (context, payload) => {
-      const token = context.state.token;
-      const { id, image, descriptions, category , color , price } = payload;
       await fetch(`http://localhost:6969/products/addproduct`, {
         method: "POST",
         mode: "no-cors",
         headers: {
           "Content-type": "application/json; charset=UTF-8",
-          "x-auth-token": `askjdhakjshdkashkdjh`,
+       
         },
         body: JSON.stringify({
-          id:id,
           image:image,
           descriptions:descriptions,
           category: category,

@@ -29,7 +29,6 @@ export default {
     },
     createProduct() {
       this.$store.dispatch("createProduct", {
-        id: this.id,
         image: this.image,
         descriptions: this.descriptions,
         category: this.category,

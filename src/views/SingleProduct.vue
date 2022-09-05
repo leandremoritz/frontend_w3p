@@ -66,7 +66,10 @@ img {
 /* cards */
 .card {
   padding: 30px;
-  margin: 20px;
+  height: fit-content;
+  /* margin: 20px; */
+  margin-bottom: 20px;
+  padding-bottom: 20px;
   width: fit-content;
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.06);
@@ -76,12 +79,26 @@ img {
   -webkit-backdrop-filter: blur(6.7px);
   border: 1px solid rgba(255, 255, 255, 0.88);
 }
+
 @media screen and (max-width: 570px) {
   .card {
     width: fit-content !important;
   }
+  .page {
+    padding-top: 130px;
+  }
   h2 {
     font-size: 15px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .page {
+    padding-top: 130px;
+  }
+}
+@media screen and (max-width: 590px) {
+  .page {
+    padding-top: 150px;
   }
 }
 </style>

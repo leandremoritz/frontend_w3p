@@ -427,7 +427,7 @@ a.nav-link:focus {
   display: block;
   position: relative;
   padding: 1.3em;
-  background-color: #f5d9d6;
+  background: #f1cad1c7;
   text-align: center;
   margin-bottom: 2em;
 }
