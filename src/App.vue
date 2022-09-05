@@ -19,7 +19,7 @@ export default {
   text-align: center;
   height: 100vh;
   overflow-x: hidden;
-  background-color: #f5d9d6;
+  background-color: brown;
 }
 
 /* nav {

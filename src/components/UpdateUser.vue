@@ -66,6 +66,7 @@ export default {
 </script>
 <style scoped>
 .mod form {
+  margin-top: 150px !important;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -84,5 +85,8 @@ export default {
   backdrop-filter: blur(6.7px);
   -webkit-backdrop-filter: blur(6.7px);
   border: 1px solid rgba(255, 255, 255, 0.88);
+}
+form {
+  margin-top: 250px;
 }
 </style>

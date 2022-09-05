@@ -252,15 +252,7 @@ export default createStore({
     // updateUser
     updateUser: async (context, payload) => {
       console.log(payload)
-      // const {
-      //   fullname,
-      //   dob,
-      //   age,
-      //   gender,
-      //   image,
-      //   email,
-      // } = payload;
-      fetch(`https://fullstack-3wp.herokuapp.com/users/` + payload, {
+      fetch(`https://fullstack-3wp.herokuapp.com/users/` + payload.id, {
         method: "PUT",
         // mode: 'cors',
         body: JSON.stringify(
@@ -300,7 +292,7 @@ export default createStore({
     createProduct: async (context, payload) => {
       await fetch(`http://localhost:6969/products/addproduct`, {
         method: "POST",
-        mode: "no-cors",
+        mode: "cors",
         headers: {
           "Content-type": "application/json; charset=UTF-8",
        

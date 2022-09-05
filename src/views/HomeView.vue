@@ -131,7 +131,7 @@ img {
 }
 .first {
   padding-top: 200px;
-  filter: drop-shadow(30px 30px 5px pink);
+  filter: drop-shadow(20px 20px 5px maroon);
   /* margin-left: 300px; */
 }
 
@@ -238,7 +238,7 @@ header {
 header:before {
   content: "";
   position: absolute;
-  background-color: #ffe9ef;
+
   width: 100%;
   height: 68%;
   z-index: -1;
@@ -427,7 +427,8 @@ a.nav-link:focus {
   display: block;
   position: relative;
   padding: 1.3em;
-  background: #f1cad1c7;
+  background: black;
+  color: white;
   text-align: center;
   margin-bottom: 2em;
 }

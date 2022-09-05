@@ -34,7 +34,7 @@ export default {};
   height: 10vw !important;
 }
 #output {
-  background-color: #f5d9d6;
+  background-color: brown;
   width: 80vw;
   margin: 20px;
   padding: 10px;

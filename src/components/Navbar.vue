@@ -115,6 +115,9 @@ export default {
 };
 </script>
 <style>
+header#header::before {
+  background-color: #a52a2aad !important;
+}
 .icon {
   width: 40px;
   height: 40px;

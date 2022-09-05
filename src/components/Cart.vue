@@ -83,7 +83,7 @@ export default {
 
 body {
   overflow-x: hidden;
-  background-color: #f5d9d6;
+  background-color: brown;
   height: 100vh;
 }
 

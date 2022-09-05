@@ -47,7 +47,7 @@ export default {
 
 <style scoped>
 .display {
-  background-color: #f5d9d6;
+  background-color: brown;
   width: 80vw;
   margin: 20px;
   padding: 10px;
@@ -67,7 +67,7 @@ li {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #f5d9d6;
+  background-color: brown;
   padding-top: 150px;
   backdrop-filter: blur 5px;
   /* margin-top: 150px; */

@@ -115,6 +115,9 @@ export default {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+span {
+  color: white;
+}
 #register {
   padding: 150px;
 }
@@ -124,7 +127,7 @@ export default {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6.7px);
   -webkit-backdrop-filter: blur(6.7px); */
-  background-color: #f5d9d6;
+  background-color: brown;
   border: 1px solid rgba(255, 255, 255, 0.88);
 
   margin: 20px;
@@ -180,7 +183,7 @@ form input:first-child {
   margin: 3%;
   align-items: center;
   appearance: none;
-  background-color: #fff;
+  background-color: brown;
   border-radius: 24px;
   border-style: none;
   box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
