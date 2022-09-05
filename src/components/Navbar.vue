@@ -142,6 +142,9 @@ a {
 .nav-bar {
   padding-top: 100px !important;
 }
+nav#nav-bar.navbar {
+  background-color: brown;
+}
 #pages {
   font-size: 15px;
   background-color: inherit;
