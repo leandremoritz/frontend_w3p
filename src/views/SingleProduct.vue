@@ -41,7 +41,7 @@ export default {
 
 <style scoped>
 .single {
-  background-color: #f5d9d6;
+  background-color: brown;
   height: 100vh;
 }
 .arrow {
@@ -74,7 +74,7 @@ img {
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.06);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  filter: drop-shadow(0px 0px 5px pink);
   backdrop-filter: blur(6.7px);
   -webkit-backdrop-filter: blur(6.7px);
   border: 1px solid rgba(255, 255, 255, 0.88);

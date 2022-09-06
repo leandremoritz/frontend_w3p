@@ -61,11 +61,10 @@ h1 {
   margin: 3%;
   align-items: center;
   appearance: none;
-  background-color: #fff;
+  background-color: brown;
   border-radius: 24px;
   border-style: none;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
-    rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
+  filter: drop-shadow(0px 0px 5px pink);
   box-sizing: border-box;
   color: #3c4043;
   cursor: pointer;
@@ -96,7 +95,7 @@ h1 {
 
 .button-17:hover {
   background: #f6f9fe;
-  color: #174ea6;
+  color: brown;
 }
 
 .button-17:active {
@@ -107,7 +106,7 @@ h1 {
 
 .button-17:focus {
   outline: none;
-  border: 2px solid #4285f4;
+  border: 2px solid brown;
 }
 
 .button-17:not(:disabled) {
@@ -152,7 +151,7 @@ img {
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.06);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  filter: drop-shadow(0px 0px 5px pink);
   backdrop-filter: blur(6.7px);
   -webkit-backdrop-filter: blur(6.7px);
   border: 1px solid rgba(255, 255, 255, 0.88);

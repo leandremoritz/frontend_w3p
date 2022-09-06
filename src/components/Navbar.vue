@@ -35,6 +35,14 @@
             /></router-link>
           </li>
           <li>
+            <router-link to="/about"
+              ><img
+                class="icon"
+                src="https://i.postimg.cc/tJMTNjb0/icons8-about-52.png"
+                alt=""
+            /></router-link>
+          </li>
+          <li>
             <router-link to="/contact"
               ><img
                 class="icon"
@@ -106,12 +114,6 @@ export default {
       return this.$store.state.user;
     },
   },
-  // methods: {
-  //   Logout() {
-  //     this.$store.commit("Logout");
-  //     this.$router.push("/  ");
-  //   },
-  // },
 };
 </script>
 <style>

@@ -36,7 +36,7 @@ export default {
   methods: {
     Logout() {
       this.$store.commit("Logout");
-      this.$router.push("/ ");
+      this.$router.push("/login");
     },
     deleteUser(id) {
       return this.$store.dispatch("deleteUser", id);
@@ -46,6 +46,9 @@ export default {
 </script>
 
 <style scoped>
+body {
+  height: 100vh;
+}
 .display {
   background-color: brown;
   width: 80vw;

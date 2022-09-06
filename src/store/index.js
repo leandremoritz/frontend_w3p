@@ -204,11 +204,11 @@ export default createStore({
                 button: "Aww yiss!",
               })
               // alert("You've succesfully logged in !");
-              router.push("/home");
-                // router.push({
+              // router.push({
                 //   name: "users",
                 // });
               });
+              router.push("/profile");
           }
          
         });
