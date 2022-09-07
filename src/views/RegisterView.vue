@@ -70,7 +70,7 @@
           <p>
             Already got an account?
             <span
-              ><router-link href="#" to="/login" class="login"
+              ><router-link href="#" to="/" class="login"
                 >Log In</router-link
               ></span
             >

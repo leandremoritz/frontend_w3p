@@ -36,7 +36,7 @@ export default {
   methods: {
     Logout() {
       this.$store.commit("Logout");
-      this.$router.push("/login");
+      this.$router.push("/");
     },
     deleteUser(id) {
       return this.$store.dispatch("deleteUser", id);

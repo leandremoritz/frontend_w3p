@@ -94,7 +94,7 @@
 
         <div v-else>
           <li>
-            <router-link to="/login"
+            <router-link to="/"
               ><img
                 class="icon"
                 src="https://i.postimg.cc/1tbbv89v/icons8-user-96.png"
