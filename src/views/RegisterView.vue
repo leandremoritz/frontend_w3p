@@ -109,8 +109,6 @@ export default {
 };
 </script>
 <style scoped>
-body {
-}
 span {
   color: white;
 }

@@ -254,7 +254,6 @@ export default createStore({
       console.log(payload)
       fetch(`https://fullstack-3wp.herokuapp.com/users/` + payload.id, {
         method: "PUT",
-        // mode: 'cors',
         body: JSON.stringify(
           {
             fullname:payload.fullname,

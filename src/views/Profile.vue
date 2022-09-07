@@ -10,13 +10,13 @@
           <h1 class="user text-light">{{ user.fullname }}</h1>
           <h2 class="email text-light">{{ user.email }}</h2>
         </div>
-
-        <UpdateUser :user="user" />
-        <button class="button-17" @click="deleteUser(user.id)">
-          <i class="fa-solid fa-trash"></i
-          ><span class="ms-2">Delete Account</span>
-        </button>
-        <li><button class="button-17" @click="Logout()">Logout</button></li>
+        <div class="buttons">
+          <UpdateUser :user="user" />
+          <button class="button-17" @click="deleteUser(user.id)">
+            <span class="ms-2">Delete Account</span>
+          </button>
+          <li><button class="button-17" @click="Logout()">Logout</button></li>
+        </div>
       </div>
     </div>
   </div>
@@ -49,7 +49,14 @@ export default {
 body {
   height: 100vh;
 }
-.display {
+.buttons {
+  display: flex;
+  justify-content: center;
+  /* flex-direction: column; */
+  align-content: center;
+  align-items: center;
+}
+/* .display {
   background-color: brown;
   width: 80vw;
   margin: 20px;
@@ -61,7 +68,7 @@ body {
   border-radius: 30px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6.7px);
-}
+} */
 li {
   list-style-type: none;
 }
@@ -72,7 +79,7 @@ li {
   justify-content: center;
   background-color: brown;
   padding-top: 150px;
-  backdrop-filter: blur 5px;
+
   /* margin-top: 150px; */
 }
 .profilepicture {
@@ -82,7 +89,27 @@ li {
   aspect-ratio: 1;
   height: 200px;
   width: 200px;
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
 }
+/* The animation "bounce" */
+@keyframes bounce {
+  /* start */
+  0% {
+    top: 0px;
+  }
+  /* step (you can add multiple incremental steps from 1-100) */
+  50% {
+    transform: rotate(40deg);
+  }
+  /* end (you can count down from 100 to 0 too) */
+  100% {
+    top: 0px;
+  }
+}
+
 .button-17 {
   margin: 3%;
   align-items: center;
@@ -92,7 +119,7 @@ li {
   border-style: none;
   filter: drop-shadow(0px 0px 5px pink);
   box-sizing: border-box;
-  color: #3c4043;
+  color: white;
   cursor: pointer;
   display: inline-flex;
   fill: currentcolor;
@@ -121,7 +148,7 @@ li {
 
 .button-17:hover {
   background: #f6f9fe;
-  color: #174ea6;
+  color: grey !important;
 }
 
 .button-17:active {

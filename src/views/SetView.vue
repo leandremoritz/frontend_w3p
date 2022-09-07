@@ -55,8 +55,9 @@ export default {
   padding-left: 50px !important;
 }
 h1 {
-  margin-top: 160px;
+  padding-top: 250px;
 }
+
 .button-17 {
   margin: 3%;
   align-items: center;
@@ -146,9 +147,10 @@ img {
 }
 /* cards */
 .card {
-  padding: 30px;
+  height: 85vh;
+  padding: 10px;
   margin: 20px;
-  width: 30vw;
+  width: 20vw;
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.06);
   border-radius: 16px;

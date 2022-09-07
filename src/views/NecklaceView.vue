@@ -136,7 +136,7 @@ img {
   height: 300px;
 }
 h1 {
-  margin-top: 160px;
+  padding-top: 250px;
 }
 .test {
   display: flex;
@@ -146,9 +146,10 @@ h1 {
 }
 /* cards */
 .card {
-  padding: 30px;
+  height: 85vh;
+  padding: 10px;
   margin: 20px;
-  width: 30vw;
+  width: 20vw;
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.06);
   border-radius: 16px;

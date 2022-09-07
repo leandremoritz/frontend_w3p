@@ -37,7 +37,7 @@ export default {};
   background-color: brown;
   width: 80vw;
   margin: 20px;
-  padding: 10% 10px 10px 10px;
+  padding-top: 220px;
   height: fit-content;
   width: fit-content;
   display: block;

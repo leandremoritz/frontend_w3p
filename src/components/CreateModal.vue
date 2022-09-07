@@ -1,7 +1,7 @@
 <template>
-  <button class="button-17" @click="toggleModal">Create Product</button>
+  <button class="meow" @click="toggleModal">Create Product</button>
 
-  <div v-if="active" class="addme">
+  <div v-if="active == true" class="addme">
     <form>
       <div>IMAGE</div>
       <input class="button-17" type="text" />
@@ -26,6 +26,7 @@ export default {
   methods: {
     toggleModal() {
       this.active = !this.active;
+      console.trace();
     },
     createProduct() {
       this.$store.dispatch("createProduct", {
@@ -43,7 +44,44 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.meow {
+  margin-top: 200px !important;
+  margin: 3%;
+  align-items: center;
+  appearance: none;
+  background-color: brown;
+  border-radius: 24px;
+  border-style: none;
+  filter: drop-shadow(0px 0px 5px pink);
+  box-sizing: border-box;
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: 0.25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform, opacity;
+  z-index: 0;
+}
 button.btn {
   background-color: pink;
   color: black;

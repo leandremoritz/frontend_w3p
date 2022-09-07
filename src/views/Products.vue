@@ -1,5 +1,6 @@
 <template>
   <input
+    id="problem"
     class="button-17"
     type="text"
     v-model="search"
@@ -82,6 +83,9 @@ export default {
 </script>
 
 <style scoped>
+.problem {
+  margin-top: 200px !important ;
+}
 .title {
   padding-left: 70px !important;
 }
@@ -179,15 +183,16 @@ img {
 }
 .test {
   display: flex;
-  padding-top: 150px;
+
   flex-wrap: wrap;
   justify-content: center;
 }
 /* cards */
 .card {
-  padding: 30px;
+  height: 85vh;
+  padding: 10px;
   margin: 20px;
-  width: 30vw;
+  width: 20vw;
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.06);
   border-radius: 16px;

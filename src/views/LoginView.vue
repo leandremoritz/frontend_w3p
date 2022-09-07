@@ -1,12 +1,11 @@
 <template>
-  <div class="box-overlay" id="login">
-    <div class="box box3"></div>
-
+  <div id="login">
     <div id="output" class="mt-5 mb-5">
       <h1>LOG IN</h1>
       <form>
         <label for="email">Email</label>
         <input
+          autocomplete="on"
           class="button-17"
           type="text"
           v-model="email"
@@ -15,6 +14,7 @@
         />
         <label for="password">Password</label>
         <input
+          autocomplete="on"
           type="text"
           v-model="password"
           class="button-17"
@@ -65,16 +65,9 @@ export default {
 };
 </script>
 <style scoped>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
 #login {
-  padding-top: 250px;
+  padding-top: 140px;
   overflow-x: hidden;
-  margin: 10px;
 }
 button#btn {
   margin-top: 10px;

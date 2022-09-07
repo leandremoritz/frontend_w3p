@@ -1,20 +1,19 @@
 <template>
   <button class="button-17" @click="toggleModal">
-    <i class="fa-solid fa-pen ms-2"></i><span class="ms-2">Edit</span>
+    <i class="fa-solid fa-pen ms-2"></i><span class="ms-2"></span>
   </button>
   <div v-if="active" class="mod">
     <form>
-      <div>Fullname</div>
       <input class="button-17" type="text" v-model="user.fullname" />
-      <div>DOB</div>
+
       <input class="button-17" type="text" v-model="user.dob" />
-      <div>AGE</div>
+
       <input class="button-17" type="text" v-model="user.age" />
-      <div>GENDER</div>
+
       <input class="button-17" type="text" v-model="user.gender" />
-      <div>IMAGE</div>
+
       <input class="button-17" type="text" v-model="user.image" />
-      <div>EMAIL</div>
+
       <input class="button-17" type="text" v-model="user.email" />
       <button class="button-17" @click.prevent="updateUser(user.id)">
         <i class="fa-solid fa-pen ms-2"></i><span class="ms-2">Submit</span>
@@ -88,5 +87,8 @@ export default {
 }
 form {
   margin-top: 250px;
+  width: 90vw !important;
+  display: flex !important;
+  flex-direction: row !important;
 }
 </style>

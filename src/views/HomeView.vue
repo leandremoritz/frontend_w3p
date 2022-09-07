@@ -22,7 +22,7 @@
     </div>
 
     <!-- Featured Section -->
-    <section id="featured">
+    <!-- <section id="featured">
       <div class="title title-left">
         <span class="line"></span>
         <h3>New Friend!</h3>
@@ -44,7 +44,7 @@
           </p>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Collection Section -->
     <section id="collections">
@@ -57,22 +57,22 @@
           <h4>Show All</h4>
           <div class="box-overlay"></div>
         </router-link>
-        <router-link class="box box2" to="/necklaces">
+        <router-link class="box box" to="/necklaces">
           <h4>NECKLACES</h4>
 
           <div class="box-overlay"></div>
         </router-link>
 
-        <router-link class="box box3" to="/bracelets">
+        <router-link class="box box2" to="/bracelets">
           <h4>BRACELETS</h4>
           <div class="box-overlay"></div>
         </router-link>
 
-        <router-link class="box box3" to="/earrings">
+        <router-link class="box box2" to="/earrings">
           <h4>Earrings</h4>
           <div class="box-overlay"></div>
         </router-link>
-        <router-link class="box box2" to="/rings">
+        <router-link class="box box" to="/rings">
           <h4>RINGS</h4>
           <div class="box-overlay"></div>
         </router-link>
@@ -104,9 +104,7 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,500,700");
 
 /* Global */
-* {
-  box-sizing: border-box;
-}
+
 .name {
   font-size: 100px;
   margin: 0 !important;
@@ -119,13 +117,6 @@ export default {
   flex-direction: column;
 }
 
-body {
-  color: #090b08;
-  margin: 0;
-  font-family: "Raleway", sans-serif;
-  font-weight: 300;
-  background-color: #ffe9ef;
-}
 img {
   filter: drop-shadow(0px 10px 3px black);
 }
@@ -176,7 +167,8 @@ section {
   padding-bottom: 1em;
 }
 .title.title-right {
-  justify-content: flex-end;
+  display: flex;
+  justify-content: flex-start;
 }
 .line {
   width: 3em;

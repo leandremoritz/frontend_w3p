@@ -1,7 +1,7 @@
 <template>
   <body>
     <div class="wrapper">
-      <div class="box">
+      <div id="cartbox">
         <div class="content">
           <div class="card" v-for="product in cartproducts" :key="product.id">
             <img :src="product.image" class="mb-2" alt="food" />
@@ -14,7 +14,7 @@
               <br />
               <button @click="deleteFromCart(product.id)" class="button-17">
                 <i class="fa fa-trash"></i>
-                <span class="btn2">Remove</span>
+                <span class="btn2"></span>
               </button>
               <div class="right-bar">
                 <hr />
@@ -76,6 +76,9 @@ export default {
 .heading {
   color: #f5d9d6;
 }
+.cartbox {
+  background-color: brown;
+}
 .content {
   display: flex;
   flex-wrap: wrap;
@@ -85,6 +88,9 @@ body {
   overflow-x: hidden;
   background-color: brown;
   height: 100vh;
+}
+.wrapper {
+  padding-top: 200px;
 }
 
 .box {
@@ -163,7 +169,7 @@ div.card {
 
 .button-17:hover {
   background: #f6f9fe;
-  color: #174ea6;
+  color: brown;
 }
 
 .button-17:active {
@@ -174,7 +180,7 @@ div.card {
 
 .button-17:focus {
   outline: none;
-  border: 2px solid #4285f4;
+  border: 2px solid brown;
 }
 
 .button-17:not(:disabled) {

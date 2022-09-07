@@ -16,12 +16,17 @@ export default {
 };
 </script>
 <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 #app {
   font-family: "Cormorant Garamond", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  min-height: 100vh;
+
   overflow-x: clip;
   background-color: brown;
 }

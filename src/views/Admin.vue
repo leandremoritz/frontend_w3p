@@ -1,15 +1,7 @@
 <template>
   <div class="admin">
-    <td class="create"><CreateModal :product="product" /></td>
-    <!-- <table>
-      <thead>
-        <tr>
-          <th scope="col"></th>
-          <th scope="col">Category</th>
-          <th scope="col">Description</th>
-          <th scope="col">Price</th>
-        </tr>
-      </thead> -->
+    <td class="create"><CreateModal /></td>
+
     <div id="wrap">
       <tbody class="b-wrap">
         <tr v-for="product of products" :key="product.id">
@@ -20,7 +12,7 @@
             <h3>{{ product.price }}</h3>
 
             <button class="button-17" @click="deleteProduct(product.id)">
-              <i class="fa-solid fa-trash"></i><span class="ms-2">Delete</span>
+              <i class="fa-solid fa-trash"></i><span class="ms-2"></span>
             </button>
             <UpdateModal :product="product" />
           </div>

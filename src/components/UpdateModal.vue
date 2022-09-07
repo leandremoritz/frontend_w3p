@@ -1,6 +1,6 @@
 <template>
   <button class="button-17" @click="toggleModal">
-    <i class="fa-solid fa-pen ms-2"></i><span class="ms-2">Edit</span>
+    <i class="fa-solid fa-pen ms-2"></i><span class="ms-2"></span>
   </button>
   <div v-if="active" class="mod">
     <form>
@@ -13,7 +13,7 @@
       <div>PRICE</div>
       <input class="button-17" type="text" v-model="product.price" />
       <button class="button-17" @click="toggleModal">
-        <i class="fa-solid fa-pen ms-2"></i><span class="ms-2">Edit</span>
+        <i class="fa-solid fa-pen ms-2"></i><span class="ms-2"></span>
       </button>
     </form>
   </div>
@@ -48,7 +48,7 @@ export default {
   flex-wrap: wrap;
   padding: 30px;
   margin: 20px;
-  width: 50vw;
+  width: 30vw;
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.06);
   border-radius: 16px;
@@ -56,5 +56,9 @@ export default {
   backdrop-filter: blur(6.7px);
   -webkit-backdrop-filter: blur(6.7px);
   border: 1px solid rgba(255, 255, 255, 0.88);
+  z-index: 10 !important;
+}
+form {
+  background-color: white !important;
 }
 </style>

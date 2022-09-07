@@ -145,7 +145,7 @@ a {
   padding-top: 100px !important;
 }
 nav#nav-bar.navbar {
-  background-color: brown;
+  background-color: #a52a2aad;
 }
 #pages {
   font-size: 15px;
@@ -177,6 +177,9 @@ nav#nav-bar.navbar {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
+  }
+  nav#nav-bar.navbar {
+    background-color: brown;
   }
   .profile-pic {
     margin-top: 50px;
