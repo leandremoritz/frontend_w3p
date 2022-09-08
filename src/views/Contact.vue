@@ -38,7 +38,7 @@ export default {};
   width: 80vw;
   margin: 20px;
   padding-top: 220px;
-  height: fit-content;
+  height: 85vh;
   width: fit-content;
   display: block;
   margin: 0 auto;

@@ -68,6 +68,7 @@ export default {
 #login {
   padding-top: 140px;
   overflow-x: hidden;
+  height: 85vh;
 }
 button#btn {
   margin-top: 10px;

@@ -34,15 +34,18 @@
           placeholder="Enter your gender ..."
           required
         />
-
-        <input
-          class="button-17"
-          type="text"
-          v-model="image"
-          placeholder="Enter your  image URL..."
-          required
-        />
-
+        <div class="url">
+          <input
+            class="button-17"
+            type="text"
+            v-model="image"
+            placeholder="Enter your  image URL..."
+            required
+          />
+          <a href="https://postimages.org/" target="_blank"
+            >click here <span>to turn image into a URL !</span>
+          </a>
+        </div>
         <input
           class="button-17"
           type="text"
@@ -113,7 +116,13 @@ span {
   color: white;
 }
 #register {
-  padding: 150px;
+  padding: 10px;
+}
+.url {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 #output {
   /* background: rgba(255, 255, 255, 0.06);

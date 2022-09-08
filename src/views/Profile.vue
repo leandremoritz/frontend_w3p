@@ -13,9 +13,13 @@
         <div class="buttons">
           <UpdateUser :user="user" />
           <button class="button-17" @click="deleteUser(user.id)">
-            <span class="ms-2">Delete Account</span>
+            <span class="ms-2"><i class="fa-solid fa-trash"></i></span>
           </button>
-          <li><button class="button-17" @click="Logout()">Logout</button></li>
+          <li>
+            <button class="button-17" @click="Logout()">
+              <i class="fa-solid fa-right-from-bracket"></i>
+            </button>
+          </li>
         </div>
       </div>
     </div>
@@ -46,9 +50,12 @@ export default {
 </script>
 
 <style scoped>
-body {
-  height: 100vh;
+.go {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .buttons {
   display: flex;
   justify-content: center;
@@ -73,7 +80,7 @@ li {
   list-style-type: none;
 }
 .container {
-  height: 100vh;
+  height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -111,7 +118,7 @@ li {
 }
 
 .button-17 {
-  margin: 3%;
+  /* margin: 3%; */
   align-items: center;
   appearance: none;
   background-color: brown;

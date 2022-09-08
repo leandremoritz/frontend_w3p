@@ -4,6 +4,13 @@
   </button>
   <div v-if="active" class="mod">
     <form>
+      <router-link to="/profile">
+        <img
+          class="arrow"
+          src="https://i.postimg.cc/pVYs9HkF/icons8-back-arrow-50.pngg"
+          alt=""
+        />
+      </router-link>
       <div>IMAGE</div>
       <input class="button-17" type="text" v-model="product.image" />
       <div>CATEGORY</div>
@@ -12,8 +19,14 @@
       <input class="button-17" type="text" v-model="product.descriptions" />
       <div>PRICE</div>
       <input class="button-17" type="text" v-model="product.price" />
-      <button class="button-17" @click="toggleModal">
+      <!-- <button class="button-17" @click="toggleModal">
         <i class="fa-solid fa-pen ms-2"></i><span class="ms-2"></span>
+      </button> -->
+      <button
+        class="button-17"
+        @click.prevent="updateProduct(updateProduct.id)"
+      >
+        <i class="fa-solid fa-pen ms-2"></i><span class="ms-2">Change</span>
       </button>
     </form>
   </div>
@@ -30,6 +43,15 @@ export default {
     toggleModal() {
       this.active = !this.active;
     },
+    updateProduct(id) {
+      return this.$store.dispatch("updateProproduct", {
+        id: id,
+        image: this.product.image,
+        brand: this.product.brand,
+        descriptions: this.product.descriptions,
+        price: this.product.price,
+      });
+    },
   },
   mounted() {
     console.log(this.product);
@@ -37,6 +59,11 @@ export default {
 };
 </script>
 <style scoped>
+.arrow {
+  width: 50px;
+  filter: drop-shadow(20px 20px 1px pink);
+  margin-bottom: 10px;
+}
 .mod form {
   position: fixed;
   top: 50%;
@@ -57,6 +84,10 @@ export default {
   -webkit-backdrop-filter: blur(6.7px);
   border: 1px solid rgba(255, 255, 255, 0.88);
   z-index: 10 !important;
+}
+.button-17 {
+  width: 150px !important;
+  margin: 0;
 }
 form {
   background-color: white !important;

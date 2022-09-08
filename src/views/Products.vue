@@ -1,13 +1,14 @@
 <template>
-  <input
-    id="problem"
-    class="button-17"
-    type="text"
-    v-model="search"
-    placeholder="Search..."
-  />
-
   <div class="test">
+    <div class="search">
+      <input
+        id="problem"
+        class="button-17"
+        type="text"
+        v-model="search"
+        placeholder="Search..."
+      />
+    </div>
     <div
       v-for="product in filteredProducts"
       :key="product.id"
@@ -15,7 +16,7 @@
     >
       <div class="loop">
         <div class="card">
-          <img :src="product.image" />
+          <img id="productsimages" :src="product.image" />
           <div class="content">
             <h2 class="desc">{{ product.descriptions }}</h2>
             <h3>R{{ product.price }}</h3>
@@ -83,14 +84,24 @@ export default {
 </script>
 
 <style scoped>
+.search {
+  width: 100%;
+}
 .problem {
   margin-top: 200px !important ;
 }
-.title {
-  padding-left: 70px !important;
+#productsimages {
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 50px;
+  margin: 10px;
+  filter: drop-shadow(0px 0px 10px white);
 }
+#problem {
+  width: 400px !important;
+}
+
 .button-17 {
-  margin-top: 50px !important;
+  margin-top: 20px !important;
   margin: 3%;
   align-items: center;
   appearance: none;
@@ -111,7 +122,7 @@ export default {
   justify-content: center;
   letter-spacing: 0.25px;
   line-height: normal;
-  max-width: 100%;
+  width: 500px;
   overflow: visible;
   padding: 2px 24px;
   position: relative;
@@ -186,13 +197,20 @@ img {
 
   flex-wrap: wrap;
   justify-content: center;
+  padding-top: 150px;
+}
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 /* cards */
 .card {
   height: 85vh;
   padding: 10px;
   margin: 20px;
-  width: 20vw;
+  width: 400px;
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.06);
   border-radius: 16px;

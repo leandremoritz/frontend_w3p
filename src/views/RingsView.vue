@@ -4,7 +4,7 @@
     <div v-for="product in products" :key="product.id" :product="product">
       <div class="loop">
         <div class="card">
-          <img :src="product.image" />
+          <img id="ringsimages" :src="product.image" />
           <div class="content">
             <h2 class="desc">{{ product.descriptions }}</h2>
             <h3>R{{ product.price }}</h3>
@@ -52,7 +52,15 @@ export default {
 
 <style scoped>
 .title {
-  padding-left: 50px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#ringsimages {
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 50px;
+  margin: 10px;
+  filter: drop-shadow(0px 0px 7px white);
 }
 h1 {
   padding-top: 250px;
@@ -66,7 +74,7 @@ h1 {
   border-style: none;
   filter: drop-shadow(0px 0px 5px pink);
   box-sizing: border-box;
-  color: #3c4043;
+  color: white;
   cursor: pointer;
   display: inline-flex;
   fill: currentcolor;
@@ -145,7 +153,7 @@ img {
 }
 /* cards */
 .card {
-  height: 85vh;
+  height: 65vh;
   padding: 10px;
   margin: 20px;
   width: 20vw;

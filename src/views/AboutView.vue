@@ -6,34 +6,53 @@
         <div class="carousel__cell carousel__cell--1">
           <span class="carousel__span">
             <img
+              id="slide"
               src="https://i.postimg.cc/QCBkh929/Tshimologo-King.jpg"
               alt=""
             />
+            <h5>King Mabena</h5>
           </span>
         </div>
         <div class="carousel__cell carousel__cell--2">
           <span class="carousel__span"
-            ><img src="https://i.postimg.cc/5thBXCLk/Cassidy-1-jpg3.jpg" alt=""
-          /></span>
+            ><img
+              id="slide"
+              src="https://i.postimg.cc/5thBXCLk/Cassidy-1-jpg3.jpg"
+              alt=""
+            />
+            <h5>Cassidy Manuel</h5>
+          </span>
         </div>
         <div class="carousel__cell carousel__cell--3">
           <span class="carousel__span"
-            ><img src="https://i.postimg.cc/yNCJLVFH/IMG-6815-2.jpg" alt=""
-          /></span>
+            ><img
+              id="slide"
+              src="https://i.postimg.cc/yNCJLVFH/IMG-6815-2.jpg"
+              alt=""
+            />
+            <h5>Mika Rinquist</h5>
+          </span>
         </div>
         <div class="carousel__cell carousel__cell--4">
           <span class="carousel__span"
-            ><img src="https://i.postimg.cc/DwnQzdMs/image.png" alt=""
-          /></span>
+            ><img
+              id="slide"
+              src="https://i.postimg.cc/DwnQzdMs/image.png"
+              alt=""
+            />
+            <h5>Jesse Spence</h5></span
+          >
         </div>
-        <div class="carousel__cell carousel__cell--5">
+        <!-- <div class="carousel__cell carousel__cell--5">
           <span class="leandre"
             ><img
               class="me"
               src="https://i.postimg.cc/CLJFXk9J/Lumii-20220323-230213574-1.jpg"
               alt=""
-          /></span>
-        </div>
+            />
+            <h5>Le-Andre Moritz</h5></span
+          >
+        </div> -->
       </div>
     </div>
     <div class="text">
@@ -87,15 +106,27 @@ h2 {
   flex-direction: column;
   align-items: center;
 }
+h5 {
+  font-size: 30px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  color: brown;
+  padding: 7px;
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
 img {
   width: 200px;
   height: 185px;
   filter: drop-shadow(0px 0px 10px white);
 }
+#slide {
+  margin-top: 120px;
+}
 
 .carousel__scene {
   width: 21rem;
-  height: 14rem;
+  height: 24rem !important;
   position: relative;
   perspective: 100rem;
   margin-top: 10rem;

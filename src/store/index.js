@@ -23,6 +23,9 @@ export default createStore({
     removeFromCart: (state, cart) => {
       state.cart = cart;
     },
+    removeProduct: (state , product) => {
+    state.product = product
+    },
     setProducts(state, products) {
       state.products = products;
     },
@@ -65,22 +68,23 @@ export default createStore({
       const newCart = context.state.cart.filter(
         (product) => product.id != id
       );
-      swal({
-        title: "Are you sure you want to remove this item?",
-        text: "",
-        icon: "warning",
-        buttons: true,
-        dangerMode: true,
-      })
-      .then((willDelete) => {
-        if (willDelete) {
-          swal("Poof! Removed !", {
-            icon: "success",
-          });
-        } 
-      })
+      // swal({
+      //   title: "Are you sure you want to remove this item?",
+      //   text: "",
+      //   icon: "warning",
+      //   buttons: true,
+      //   dangerMode: true,
+      // })
+      // .then((willDelete) => {
+      //   if (willDelete) {
+      //     swal("Poof! Removed !", {
+      //       icon: "success",
+      //     });
+      //   } 
+      // })
       context.commit("removeFromCart", newCart);
     },
+   
      // get get all products
      getProducts: async (context , id ) => {
       fetch(`https://fullstack-3wp.herokuapp.com/products`)
@@ -269,15 +273,15 @@ export default createStore({
         },
       })
         .then((response) => response.json())
-        .then(() => context.dispatch("setUser"));
+        .then((data) => console.log(data) );
     },
     // delete
-    deleteProduct: async (context, id) => {
+    deleteProduct: async (context , id) => {
       fetch(`https://fullstack-3wp.herokuapp.com/products/` + id, {
         method: "DELETE",
       })
-        .then((response) => response.json())
-        .then(() => context.dispatch("setProducts"));
+      .then((response) => response.json())
+        .then(() => context.dispatch("setProduct"));
     },
      // delete user
      deleteUser: async (context, id) => {
@@ -285,7 +289,7 @@ export default createStore({
         method: "DELETE",
       })
         .then((response) => response.json())
-        .then(() => context.dispatch("setProducts"));
+        .then(() => context.dispatch("setUser"));
     },
     // create a product
     createProduct: async (context, payload) => {
@@ -297,11 +301,12 @@ export default createStore({
        
         },
         body: JSON.stringify({
-          image:image,
-          descriptions:descriptions,
-          category: category,
-          color:color,
-          price:price
+        
+          image: payload.image,
+          descriptions: payload.descriptions,
+          category: payload.category,
+          color: payload.color,
+          price: payload.price
         }),
       })
         .then((response) => response.json())

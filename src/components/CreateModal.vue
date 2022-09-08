@@ -4,13 +4,14 @@
   <div v-if="active == true" class="addme">
     <form>
       <div>IMAGE</div>
-      <input class="button-17" type="text" />
-      <div>CATEGORY</div>
-      <input class="button-17" type="text" />
+      <input class="button-17" type="text" v-model="image" />
       <div>DESCRIPTION</div>
-      <input class="button-17" type="text" />
+      <input class="button-17" type="text" v-model="descriptions" />
+      <div>CATEGORY</div>
+      <input class="button-17" type="text" v-model="category" />
+
       <div>PRICE</div>
-      <input class="button-17" type="text" />
+      <input class="button-17" type="text" v-model="price" />
       <button class="button-17" @click="createProduct()">Add</button>
     </form>
   </div>
@@ -46,7 +47,7 @@ export default {
 
 <style scoped>
 .meow {
-  margin-top: 200px !important;
+  margin-top: 120px !important;
   margin: 3%;
   align-items: center;
   appearance: none;
@@ -83,7 +84,7 @@ export default {
   z-index: 0;
 }
 button.btn {
-  background-color: pink;
+  background-color: brown;
   color: black;
   height: 40px;
   padding: 5px;

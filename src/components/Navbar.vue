@@ -120,6 +120,9 @@ export default {
 header#header::before {
   background-color: #a52a2aad !important;
 }
+.menu li {
+  margin-top: 1em !important;
+}
 .icon {
   width: 40px;
   height: 40px;

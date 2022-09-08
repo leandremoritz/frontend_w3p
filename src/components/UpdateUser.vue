@@ -3,6 +3,13 @@
     <i class="fa-solid fa-pen ms-2"></i><span class="ms-2"></span>
   </button>
   <div v-if="active" class="mod">
+    <router-link to="/profile">
+      <img
+        class="arrow"
+        src="https://i.postimg.cc/pVYs9HkF/icons8-back-arrow-50.pngg"
+        alt=""
+      />
+    </router-link>
     <form>
       <input class="button-17" type="text" v-model="user.fullname" />
 
@@ -16,7 +23,7 @@
 
       <input class="button-17" type="text" v-model="user.email" />
       <button class="button-17" @click.prevent="updateUser(user.id)">
-        <i class="fa-solid fa-pen ms-2"></i><span class="ms-2">Submit</span>
+        <span class="ms-2">Submit</span>
       </button>
     </form>
   </div>
@@ -40,13 +47,14 @@ export default {
       this.active = !this.active;
     },
     updateUser(id) {
-      return this.$store.dispatch("updateUser", id, {
-        fullname: this.fullname,
-        dob: this.dob,
-        age: this.age,
-        gender: this.gender,
-        image: this.image,
-        email: this.email,
+      return this.$store.dispatch("updateUser", {
+        id: id,
+        fullname: this.user.fullname,
+        dob: this.user.dob,
+        age: this.user.age,
+        gender: this.user.gender,
+        image: this.user.image,
+        email: this.user.email,
       });
     },
     // updateUser(id) {
@@ -84,6 +92,11 @@ export default {
   backdrop-filter: blur(6.7px);
   -webkit-backdrop-filter: blur(6.7px);
   border: 1px solid rgba(255, 255, 255, 0.88);
+}
+.arrow {
+  width: 50px;
+  filter: drop-shadow(20px 20px 1px pink);
+  margin-bottom: 10px;
 }
 form {
   margin-top: 250px;

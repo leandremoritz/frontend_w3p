@@ -4,7 +4,7 @@
     <div v-for="product in products" :key="product.id" :product="product">
       <div class="loop">
         <div class="card">
-          <img :src="product.image" />
+          <img id="setimages" :src="product.image" />
           <div class="content">
             <h2 class="desc">{{ product.descriptions }}</h2>
             <h3>R{{ product.price }}</h3>
@@ -52,10 +52,20 @@ export default {
 
 <style scoped>
 .title {
-  padding-left: 50px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  padding: 0 !important;
 }
 h1 {
   padding-top: 250px;
+}
+#setimages {
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 50px;
+  margin: 10px;
+  filter: drop-shadow(0px 0px 7px white);
 }
 
 .button-17 {
@@ -147,7 +157,7 @@ img {
 }
 /* cards */
 .card {
-  height: 85vh;
+  height: 75vh;
   padding: 10px;
   margin: 20px;
   width: 20vw;

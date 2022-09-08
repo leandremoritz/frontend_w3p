@@ -33,6 +33,7 @@ export default {
 
 body {
   overflow-x: clip;
+  background-color: black;
 }
 /* nav {
   padding: 30px;

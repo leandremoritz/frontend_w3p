@@ -1,6 +1,9 @@
 <template>
   <div class="single">
     <div class="page" v-for="product in product" :key="product.id">
+      <div>
+        <h1>{{ product.descriptions }}</h1>
+      </div>
       <div class="card">
         <div>
           <router-link to="/products">
@@ -11,9 +14,9 @@
             />
           </router-link>
         </div>
-        <img :src="product.image" alt="" />
-        <h2>{{ product.descriptions }}</h2>
-        <h1>R{{ product.price }}</h1>
+        <img id="images" :src="product.image" alt="" />
+        <!-- <h1>{{ product.descriptions }}</h1> -->
+        <h2>R{{ product.price }}</h2>
 
         <button @click="addToCart(product)" class="button-17">
           <i class="fa-solid fa-cart-arrow-down"></i>
@@ -49,28 +52,38 @@ export default {
   filter: drop-shadow(20px 20px 1px pink);
   margin-bottom: 10px;
 }
-img {
+#images {
   width: 150px;
   margin-top: 20px;
-  filter: drop-shadow(0px 10px 10px white);
+  filter: drop-shadow(0px 0px 10px white);
+  border-bottom-right-radius: 50px;
+  border-top-left-radius: 50px;
 }
 .page {
   height: 100vh;
   padding-top: 150px;
+
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 .title {
   padding-left: 50px !important;
 }
+h1 {
+  text-shadow: 0px 0px 10px white;
+  font-size: 50px;
+}
 /* cards */
 .card {
   padding: 30px;
+  margin-top: 20px;
   height: fit-content;
   /* margin: 20px; */
   margin-bottom: 20px;
   padding-bottom: 20px;
-  width: fit-content;
+  width: 50vh;
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.06);
   border-radius: 16px;

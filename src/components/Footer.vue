@@ -26,7 +26,7 @@
         <div class="row">
           <div class="col-xl-6 col-lg-6 text-center text-lg-left">
             <div class="copyright-text">
-              <p>Copyright &copy; 2018, All Right Reserved</p>
+              <p>Copyright &copy; 2022, All Right Reserved</p>
             </div>
           </div>
           <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right"></div>

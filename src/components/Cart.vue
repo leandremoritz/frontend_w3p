@@ -2,9 +2,10 @@
   <body>
     <div class="wrapper">
       <div id="cartbox">
+        <h1>You've ordered :</h1>
         <div class="content">
           <div class="card" v-for="product in cartproducts" :key="product.id">
-            <img :src="product.image" class="mb-2" alt="food" />
+            <img id="cartimages" :src="product.image" class="mb-2" alt="food" />
             <div class="cart-content">
               <h3 class="ms-5">{{ product.descriptions }}</h3>
               <br />
@@ -24,21 +25,23 @@
         </div>
       </div>
     </div>
-    <div class="card">
-      <h5>CART SUMMARY</h5>
-      <div class="cart-details">
-        <div class="row">
-          <p>Subtotal:</p>
-          <p>Shipping:</p>
+    <div class="move">
+      <div class="addup">
+        <h5>CART SUMMARY</h5>
+        <div class="cart-details">
+          <div class="row">
+            <p>Subtotal:</p>
+            <p>Shipping:</p>
+          </div>
+          <div class="row">
+            <p>R{{ calculatePrice }}</p>
+            <p>Free shipping</p>
+          </div>
         </div>
-        <div class="row">
-          <p>R{{ calculatePrice }}</p>
-          <p>Free shipping</p>
-        </div>
+        <router-link to="/checkout">
+          <button type="submit" class="button-17">Checkout</button>
+        </router-link>
       </div>
-      <router-link to="/checkout">
-        <button type="submit" class="button-17">Checkout</button>
-      </router-link>
     </div>
   </body>
 </template>
@@ -73,11 +76,47 @@ export default {
 </script>
 
 <style scoped>
+h1 {
+  width: 40vh;
+  border-bottom: 2px solid black;
+  margin-left: 30px;
+  border-left: 2px solid black;
+}
 .heading {
   color: #f5d9d6;
 }
-.cartbox {
+.move {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+.addup {
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: stretch;
+  padding: 30px;
+
+  width: 20vw;
+  padding: 10px;
+
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.7px);
+  -webkit-backdrop-filter: blur(6.7px);
+  border: 1px solid rgba(255, 255, 255, 0.88);
+}
+
+#cartbox {
   background-color: brown;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .content {
   display: flex;
@@ -98,21 +137,28 @@ body {
   margin: 200px 0 0 0;
 }
 
-img {
-  width: 150px;
-  height: 150px;
+#cartimages {
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 50px;
+  filter: drop-shadow(0px 0px 10px white);
 }
 
 div.card {
   margin: 30px;
 }
 
+h3 {
+  font-size: 30px;
+}
 .card {
   padding: 30px;
 
   width: 20vw;
   padding: 10px;
-  /* From https://css.glass */
+
   background: rgba(255, 255, 255, 0.06);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -230,6 +276,9 @@ div.card {
     flex-wrap: wrap;
   }
   .card {
+    width: fit-content;
+  }
+  .addup {
     width: fit-content;
   }
 }

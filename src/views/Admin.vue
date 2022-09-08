@@ -6,12 +6,17 @@
       <tbody class="b-wrap">
         <tr v-for="product of products" :key="product.id">
           <div class="card">
-            <div scope="row"><img v-bind:src="product.image" alt="" /></div>
+            <div scope="row">
+              <img id="adminimages" v-bind:src="product.image" alt="" />
+            </div>
             <h2>{{ product.category }}</h2>
             <h1>{{ product.descriptions }}</h1>
-            <h3>{{ product.price }}</h3>
-
-            <button class="button-17" @click="deleteProduct(product.id)">
+            <h1>R{{ product.price }}</h1>
+            <button
+              id="delete"
+              class="button-17"
+              @click="deleteProduct(product.id)"
+            >
               <i class="fa-solid fa-trash"></i><span class="ms-2"></span>
             </button>
             <UpdateModal :product="product" />
@@ -41,7 +46,7 @@ export default {
   },
   methods: {
     deleteProduct(id) {
-      return this.$store.dispatch("deleteProduct", id);
+      this.$store.dispatch("deleteProduct", id);
     },
     createProduct() {
       this.$store.dispatch("createProduct", {
@@ -59,10 +64,11 @@ export default {
 <style>
 /* cards */
 .card {
+  height: 65vh;
   padding: 30px;
   margin: 20px;
   width: 25vw;
-  /* From https://css.glass */
+
   background: rgba(255, 255, 255, 0.06);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -70,8 +76,12 @@ export default {
   -webkit-backdrop-filter: blur(6.7px);
   border: 1px solid rgba(255, 255, 255, 0.88);
 }
+#delete {
+  width: 9vw !important;
+}
 @media screen and (max-width: 850px) {
   .card {
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -80,6 +90,7 @@ export default {
     width: fit-content;
   }
 }
+
 .create {
   display: flex;
   justify-content: center;
@@ -100,9 +111,13 @@ table {
   justify-content: center;
 }
 
-img {
+#adminimages {
   width: 150px;
   height: 150px;
+  filter: drop-shadow(0px 0px 10px white);
+  border-bottom-right-radius: 50px;
+  border-top-left-radius: 50px;
+  margin-bottom: 10px;
 }
 /* button */
 .button-17 {
@@ -113,7 +128,7 @@ img {
   background-color: brown;
   border-radius: 24px;
   border-style: none;
-  filter: drop-shadow(0px 0px 5px pink);
+  filter: drop-shadow(0px 0px 1px pink);
   box-sizing: border-box;
   color: white;
   font-weight: bolder;
@@ -145,7 +160,7 @@ img {
 
 .button-17:hover {
   background: #f6f9fe;
-  color: rgb(247, 39, 163);
+  color: brown;
 }
 
 .button-17:active {
@@ -156,7 +171,7 @@ img {
 
 .button-17:focus {
   outline: none;
-  border: 2px solid rgb(240, 171, 183);
+  border: 2px solid brown;
 }
 
 .button-17:not(:disabled) {
@@ -187,6 +202,10 @@ img {
   img {
     width: 100px;
   }
+  .card {
+    width: 300px;
+    height: fit-content;
+  }
   .admin {
     padding: 0;
     margin: 0;
@@ -202,6 +221,11 @@ img {
     flex-direction: column;
     flex-wrap: wrap;
     width: fit-content;
+  }
+}
+@media screen and (max-width: 1100px) {
+  button.button-17 {
+    margin: 10px !important;
   }
 }
 </style>

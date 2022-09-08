@@ -21,31 +21,6 @@
       </div>
     </div>
 
-    <!-- Featured Section -->
-    <!-- <section id="featured">
-      <div class="title title-left">
-        <span class="line"></span>
-        <h3>New Friend!</h3>
-      </div>
-      <div class="wrapper">
-        <div class="image">
-          <img
-            class="new"
-            src="https://i.postimg.cc/pX80ZPHc/pexels-the-glorious-studio-12026050-removebg-preview.png"
-            alt=""
-          />
-        </div>
-        <div class="text">
-          <h2>New and Popular</h2>
-          <p>
-            These are an excellent choice for modern-inspired jewelry and
-            simple, traditional designs because they suggest a slightly modern,
-            candlelit glamour.
-          </p>
-        </div>
-      </div>
-    </section> -->
-
     <!-- Collection Section -->
     <section id="collections">
       <div class="title title-right">
@@ -108,8 +83,17 @@ export default {
 .name {
   font-size: 100px;
   margin: 0 !important;
+  -webkit-animation: hello 2s infinite alternate;
+  animation: hello 2s infinite alternate;
 }
-
+@-webkit-keyframes hello {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}
 .no_one {
   height: 92vh;
   display: flex;
