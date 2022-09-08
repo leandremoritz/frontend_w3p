@@ -32,6 +32,7 @@
                 class="icon"
                 src="https://i.postimg.cc/6QZZ7QHd/icons8-home-96.png"
                 alt=""
+                title="Home"
             /></router-link>
           </li>
           <li>
@@ -40,6 +41,7 @@
                 class="icon"
                 src="https://i.postimg.cc/tJMTNjb0/icons8-about-52.png"
                 alt=""
+                title="About"
             /></router-link>
           </li>
           <li>
@@ -48,6 +50,16 @@
                 class="icon"
                 src="https://i.postimg.cc/5y4fMPYX/icons8-contact-details-100.png"
                 alt=""
+                title="Contact"
+            /></router-link>
+          </li>
+          <li>
+            <router-link to="/product"
+              ><img
+                class="icon"
+                src="https://i.postimg.cc/wT3H52fm/icons8-necklace-64.png"
+                alt=""
+                title="Product"
             /></router-link>
           </li>
           <li>
@@ -58,6 +70,7 @@
                   class="icon"
                   src="https://i.postimg.cc/G2MYJRzh/icons8-shopping-cart-48.png"
                   alt="Cart"
+                  title="Cart"
                 />
               </div>
             </router-link>
@@ -68,6 +81,7 @@
                 class="icon"
                 src="https://i.postimg.cc/N0JYYG4c/icons8-male-user-100.png"
                 alt="Profile"
+                title="Profile"
             /></router-link>
           </li>
 
@@ -77,6 +91,7 @@
                 class="icon"
                 src="https://i.postimg.cc/cCsk9wpM/icons8-admin-settings-male-90.png"
                 alt=""
+                title="Admin"
             /></router-link>
           </li>
 

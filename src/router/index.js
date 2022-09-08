@@ -56,6 +56,11 @@ const routes = [
     component: () => import('../views/RegisterView.vue')
   },
   {
+    path: '/product',
+    name: 'Product',
+    component: () => import('../views/Products.vue')
+  },
+  {
     path: '/cart',
     name: 'CartView',
     component: () => import('../views/CartView.vue')

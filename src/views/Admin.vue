@@ -1,6 +1,6 @@
 <template>
   <div class="admin">
-    <td class="create"><CreateModal /></td>
+    <td class="create"><CreateModal :product="product" /></td>
 
     <div id="wrap">
       <tbody class="b-wrap">
@@ -121,7 +121,7 @@ table {
 }
 /* button */
 .button-17 {
-  margin-top: 50px !important;
+  margin-top: 10px !important;
   margin: 3%;
   align-items: center;
   appearance: none;

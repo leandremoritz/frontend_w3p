@@ -15,9 +15,14 @@
           Precision in every inch of our work where Elegance is our motto.
         </h2>
 
-        <router-link to="/contact"
+        <!-- <router-link to="/contact"
           ><button class="button-17">Contact</button></router-link
-        >
+        > -->
+        <h2>
+          <a href="#collections"
+            ><i id="iconn" class="fa-solid fa-circle-arrow-down"></i
+          ></a>
+        </h2>
       </div>
     </div>
 
@@ -25,7 +30,7 @@
     <section id="collections">
       <div class="title title-right">
         <span class="line line-right"></span>
-        <h3>Collections</h3>
+        <h3 class="h3">Collections</h3>
       </div>
       <div class="wrapper">
         <router-link class="box box3" to="/products">
@@ -80,13 +85,19 @@ export default {
 
 /* Global */
 
+#iconn {
+  font-size: 50px;
+  margin: 10px;
+  filter: drop-shadow(0px 0px 10px white);
+}
 .name {
   font-size: 100px;
   margin: 0 !important;
+  filter: drop-shadow(0px 0px 10px white);
   -webkit-animation: hello 2s infinite alternate;
   animation: hello 2s infinite alternate;
 }
-@-webkit-keyframes hello {
+@keyframes hello {
   0% {
     transform: translateY(0);
   }
@@ -94,6 +105,7 @@ export default {
     transform: translateY(-20px);
   }
 }
+
 .no_one {
   height: 92vh;
   display: flex;
@@ -108,6 +120,9 @@ img {
   padding-top: 200px;
   filter: drop-shadow(20px 20px 5px maroon);
   /* margin-left: 300px; */
+}
+.h3 {
+  margin-top: 80px !important;
 }
 
 /* h1 {
@@ -560,6 +575,7 @@ input {
     padding-top: 150px;
     height: 60vh;
     margin-left: 80px;
+    width: 300px;
   }
 }
 @media (min-width: 576px) {

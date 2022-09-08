@@ -22,7 +22,17 @@ export default {
   data() {
     return {
       active: false,
+      image: "",
+      descriptions: "",
+      category: "",
+      color: "",
+      price: "",
     };
+  },
+  computed: {
+    product() {
+      return this.$store.state.product;
+    },
   },
   methods: {
     toggleModal() {
@@ -46,6 +56,9 @@ export default {
 </script>
 
 <style scoped>
+form {
+  background-color: white !important;
+}
 .meow {
   margin-top: 120px !important;
   margin: 3%;
