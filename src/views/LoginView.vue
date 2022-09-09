@@ -66,7 +66,7 @@ export default {
 </script>
 <style scoped>
 #login {
-  padding-top: 140px;
+  padding-top: 180px;
   overflow-x: hidden;
   height: 85vh;
 }
