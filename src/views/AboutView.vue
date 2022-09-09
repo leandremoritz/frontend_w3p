@@ -43,16 +43,17 @@
             <h5>Jesse Spence</h5></span
           >
         </div>
-        <!-- <div class="carousel__cell carousel__cell--5">
+        <div class="carousel__cell carousel__cell--5">
           <span class="leandre"
             ><img
+              id="slide"
               class="me"
-              src="https://i.postimg.cc/CLJFXk9J/Lumii-20220323-230213574-1.jpg"
+              src="https://i.postimg.cc/W3mcXv14/IMG-20220502-030846-035.jpg"
               alt=""
             />
             <h5>Le-Andre Moritz</h5></span
           >
-        </div> -->
+        </div>
       </div>
     </div>
     <div class="text">
@@ -62,12 +63,15 @@
         alt=""
       />
       <h2>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-        officia, voluptatibus atque recusandae aperiam ullam, maxime laudantium
-        tenetur tempore nihil vitae in! Quibusdam beatae reprehenderit quod,
-        sed, adipisci expedita perspiciatis esse sapiente necessitatibus minima
-        rerum asperiores placeat deserunt deleniti unde, eos assumenda vel iusto
-        in dignissimos consequuntur! Dolore, ratione provident!
+        This is our online home, bringing the L's Jewels experience to you
+        wherever you are. You can be assured that you will get the same level of
+        attention when shopping online as in one of our physical stores.
+        <p>
+          To all our friends and customers from the past year, thank you for
+          your support and love you've shown. We look forward to making many
+          more friends through our online store and can't wait for you to
+          receive our L's Jewels Boxes at your doorsteps!
+        </p>
       </h2>
     </div>
   </div>
@@ -89,6 +93,9 @@ export default {};
   border-bottom: 2px solid;
   border-right: 2px solid black;
   padding-right: 5px;
+}
+.me {
+  margin-top: 30px !important;
 }
 h2 {
   padding: 15px;
@@ -125,6 +132,7 @@ img {
 }
 
 .carousel__scene {
+  padding-top: 50px;
   width: 21rem;
   height: 24rem !important;
   position: relative;
@@ -176,7 +184,7 @@ img {
 
 .carousel__cell--5 {
   transform: rotateY(160deg) translateZ(28.8rem);
-  background-color: maroon;
+
   width: fit-content;
 }
 
