@@ -1,5 +1,23 @@
 <template>
   <body>
+    <div class="move">
+      <div class="addup">
+        <h5>CART SUMMARY</h5>
+        <div class="cart-details">
+          <div class="row">
+            <p>Subtotal:</p>
+            <p>Shipping:</p>
+          </div>
+          <div class="row">
+            <p>R{{ calculatePrice }}</p>
+            <p>Free shipping</p>
+          </div>
+        </div>
+        <router-link to="/checkout">
+          <button type="submit" class="button-17">Checkout</button>
+        </router-link>
+      </div>
+    </div>
     <div class="wrapper">
       <div id="cartbox">
         <h1>You've ordered :</h1>
@@ -25,7 +43,7 @@
         </div>
       </div>
     </div>
-    <div class="move">
+    <!-- <div class="move">
       <div class="addup">
         <h5>CART SUMMARY</h5>
         <div class="cart-details">
@@ -42,7 +60,7 @@
           <button type="submit" class="button-17">Checkout</button>
         </router-link>
       </div>
-    </div>
+    </div> -->
   </body>
 </template>
 
@@ -88,8 +106,12 @@ h1 {
 .move {
   display: flex;
   align-items: center;
-  justify-content: center;
+
   padding-bottom: 20px;
+  margin-top: 170px;
+  display: flex;
+  justify-content: center;
+  /* margin-right: 30px; */
 }
 .addup {
   height: 30vh;
@@ -129,7 +151,9 @@ body {
   height: 100vh;
 }
 .wrapper {
-  padding-top: 200px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .box {

@@ -198,7 +198,7 @@ table {
   box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
     rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1300px) {
   img {
     width: 100px;
   }
@@ -209,6 +209,9 @@ table {
   .admin {
     padding: 0;
     margin: 0;
+  }
+  .create {
+    padding-top: 100px;
   }
 }
 @media screen and (max-width: 300px) {

@@ -11,6 +11,7 @@ export default createStore({
     user: null,
     token: null,
     cart: [],
+    asc:true,
   },
   getters: {},
   mutations: {
@@ -41,6 +42,16 @@ export default createStore({
     Logout(state){ 
      (state.user = ""), (state.token = "") 
     },
+
+    sortByPrice:(state)=>{
+      state.products.sort((a,b) =>{
+        return a.price - b.price;
+      })
+      if(!state.asc){
+        state.products.reverse()
+      }
+      state.asc=!state.asc
+    }
 
   },
   actions: {

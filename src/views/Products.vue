@@ -1,5 +1,8 @@
 <template>
   <div class="test">
+    <div class="sort">
+      <button class="button-17" @click="sortByPrice">Sort By Price</button>
+    </div>
     <div class="search">
       <input
         id="problem"
@@ -9,6 +12,7 @@
         placeholder="Search..."
       />
     </div>
+
     <div
       v-for="product in filteredProducts"
       :key="product.id"
@@ -79,11 +83,18 @@ export default {
     addToCart(product) {
       this.$store.commit("updateCart", product);
     },
+    sortByPrice() {
+      this.$store.commit("sortByPrice");
+      // console.log("You clicked me!");
+    },
   },
 };
 </script>
 
 <style scoped>
+.sort {
+  margin-top: 50px;
+}
 .search {
   width: 100%;
 }

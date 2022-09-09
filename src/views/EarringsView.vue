@@ -1,6 +1,9 @@
 <template>
   <h1>EARRINGS</h1>
   <div class="test">
+    <div class="sort">
+      <button class="button-17" @click="sortByPrice">Sort By Price</button>
+    </div>
     <div v-for="product in products" :key="product.id" :product="product">
       <div class="loop">
         <div class="card">
@@ -42,16 +45,37 @@ export default {
     products() {
       return this.$store.state.products;
     },
+    filteredProducts() {
+      return this.$store.state.products?.filter((product) => {
+        let isMatch = true;
+        if (
+          !product.descriptions
+            .toLowerCase()
+            .includes(this.search.toLowerCase())
+        )
+          isMatch = false;
+        // if (this.category !== "all" && product.category !== this.category) isMatch = false;
+        // if (this.company !== "all" && product.company !== this.company) isMatch = false;
+        return isMatch;
+      });
+    },
   },
   methods: {
     addToCart(product) {
       this.$store.commit("updateCart", product);
+    },
+    sortByPrice() {
+      this.$store.commit("sortByPrice");
+      // console.log("You clicked me!");
     },
   },
 };
 </script>
 
 <style scoped>
+.sort {
+  width: 100vw;
+}
 h1 {
   padding-top: 250px;
 }

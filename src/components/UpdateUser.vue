@@ -22,6 +22,7 @@
       <input class="button-17" type="text" v-model="user.image" />
 
       <input class="button-17" type="text" v-model="user.email" />
+
       <button class="button-17" @click.prevent="updateUser(user.id)">
         <span class="ms-2">Submit</span>
       </button>

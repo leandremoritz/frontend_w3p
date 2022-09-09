@@ -4,30 +4,35 @@
   </button>
   <div v-if="active" class="mod">
     <form>
-      <router-link to="/profile">
-        <img
-          class="arrow"
-          src="https://i.postimg.cc/pVYs9HkF/icons8-back-arrow-50.pngg"
-          alt=""
-        />
-      </router-link>
+      <!-- <router-link to="/profile"> -->
+      <img
+        class="arrow"
+        src="https://i.postimg.cc/pVYs9HkF/icons8-back-arrow-50.pngg"
+        alt=""
+      />
+      <!-- </router-link> -->
       <div>IMAGE</div>
-      <input class="button-17" type="text" v-model="product.image" />
+      <input id="btn" class="button-17" type="text" v-model="product.image" />
       <div>CATEGORY</div>
-      <input class="button-17" type="text" v-model="product.brand" />
+      <input id="btn" class="button-17" type="text" v-model="product.brand" />
       <div>DESCRIPTION</div>
-      <input class="button-17" type="text" v-model="product.descriptions" />
+      <input
+        id="btn"
+        class="button-17"
+        type="text"
+        v-model="product.descriptions"
+      />
       <div>PRICE</div>
-      <input class="button-17" type="text" v-model="product.price" />
-      <!-- <button class="button-17" @click="toggleModal">
+      <input id="btn" class="button-17" type="text" v-model="product.price" />
+      <button id="btn" class="button-17" @click="toggleModal">
         <i class="fa-solid fa-pen ms-2"></i><span class="ms-2"></span>
-      </button> -->
-      <button
+      </button>
+      <!-- <button
         class="button-17"
         @click.prevent="updateProduct(updateProduct.id)"
       >
         <i class="fa-solid fa-pen ms-2"></i><span class="ms-2">Change</span>
-      </button>
+      </button> -->
     </form>
   </div>
 </template>
@@ -75,7 +80,7 @@ export default {
   flex-wrap: wrap;
   padding: 30px;
   margin: 20px;
-  width: 30vw;
+  width: 20vw;
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.06);
   border-radius: 16px;
@@ -89,6 +94,10 @@ export default {
   width: 150px !important;
   margin: 0;
 }
+#btn {
+  width: 300px !important;
+}
+
 form {
   background-color: white !important;
 }
