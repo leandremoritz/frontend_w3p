@@ -116,7 +116,9 @@ span {
   color: white;
 }
 #register {
-  padding: 10px;
+  /* padding: 10px; */
+  padding-top: 190px;
+  padding-bottom: 20px;
 }
 .url {
   display: flex;
@@ -132,10 +134,10 @@ span {
   -webkit-backdrop-filter: blur(6.7px); */
   background-color: brown;
   border: 1px solid rgba(255, 255, 255, 0.88);
-
-  margin: 20px;
+  /* 
+  margin: 20px; */
   padding: 10px;
-  margin-top: 150px !important;
+  /* padding-top: 180px !important; */
   height: fit-content;
   width: fit-content;
   display: block;
@@ -269,7 +271,8 @@ form input:first-child {
   #register {
     display: flex;
     justify-content: center;
-    margin-top: 150px;
+    /* margin-top: 150px; */
+    padding-top: 190px;
   }
 }
 </style>
